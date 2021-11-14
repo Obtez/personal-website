@@ -26,7 +26,7 @@ const skillsList = [
   },
   {
     url: "nodejs",
-    text: "Node.js /\nExpress" 
+    text: "Node.js" 
   },
   {
     url: "nextjs",
@@ -57,13 +57,13 @@ const SkillsScreen = () => {
     <section id="skills" className={styles.container}>
       <h2>.skills</h2>
       <div className={styles.row}>
-      <Image className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" width={100} height={100} />
+      <img className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" />
       <ul className={styles.skillItemContainer}>
           {
             skillsList.map(skill => <SkillsItem key={skill.text} skill={skill} />)
           }
           </ul>
-      <Image className={styles.bracket} src="/assets/skills-icons/right_bracket.svg" alt="bracket" width={100} height={100}/>
+      <img className={styles.bracket} src="/assets/skills-icons/right_bracket.svg" alt="bracket"/>
       </div>
     </section>
   );
