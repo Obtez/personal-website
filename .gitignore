@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+TODO.md
+public/favicon.ico
+public/vercel.svg

@@ -1,0 +1,240 @@
+@import './variables';
+@import './mixins';
+
+.hero {
+  height: 100vh;
+  background-image: url('/assets/Blue Wave Background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.accent__stick__left {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 0px;
+  height: 49rem;
+  border: 0.313rem solid $light-blue;
+  border-radius: 3.125rem;
+  margin-left: 15vw; // 260px // 16.25rem
+}
+
+.accent__stick__right {
+  position: absolute;
+  bottom: 0;
+  width: 0px;
+  height: 49rem;
+  border: 0.313rem solid #838b9d;
+  border-radius: 3.125rem;
+  margin-left: 85vw; // 103.75rem
+}
+
+.container {
+  @include container;
+}
+
+.navbar {
+  margin: 0 15vw;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  &__list {
+    display: flex;
+    list-style-type: none;
+    font-weight: 300;
+  }
+
+  &__link {
+    margin-left: 1.875rem;
+    color: $off-white;
+    font-size: 1rem;
+    text-decoration: none;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    color: $off-white;
+    font-size: 1.7rem;
+  }
+}
+
+// everything except navbar
+.header-container {
+  margin-top: 9.188rem;
+
+  flex-grow: 1;
+
+  display: grid;
+  grid-template-areas:
+    'header header folder'
+    'arrow slogan slogan';
+}
+
+// Only left side of the header
+.header {
+  grid-area: header;
+  h2 {
+    font-weight: 300;
+    font-size: 2.188rem;
+    line-height: 6.25rem;
+    color: $dark-blue;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 3.75rem;
+    line-height: 5rem;
+    color: $dark-blue;
+  }
+
+  &__btn-container {
+    margin-top: 1.625rem;
+    &__primaryBtn {
+      width: 12.19rem;
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: $off-white;
+      background-color: $accent;
+      border: 3px solid transparent;
+      border-radius: 0.313rem;
+      padding: 0.563rem 0;
+      cursor: pointer;
+
+      &:hover {
+        background: none;
+        color: $accent;
+        border: 3px solid $accent;
+      }
+    }
+    &__secondaryBtn {
+      margin-left: 2.5rem;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: $dark-blue;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+    &__btnIcon {
+      margin-right: 0.4rem;
+      margin-bottom: -0.25rem;
+      color: $dark-blue;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.folder-icon-container {
+  grid-area: folder;
+  margin-top: 2.375rem;
+  justify-self: end;
+}
+
+.arrow-icon-container {
+  grid-area: arrow;
+  align-self: end;
+  margin-bottom: 0.75rem;
+}
+
+.slogan-container {
+  grid-area: slogan;
+  align-self: end;
+  &__text {
+    font-weight: 700;
+    font-size: 5.938rem;
+    line-height: 6.25rem;
+    color: $light-blue;
+
+    text-align: end;
+
+    &__accent {
+      color: $accent;
+    }
+  }
+}
+
+// media query 950 - 1050 height
+@media screen and (min-height: 978px) and (max-height: 1050px) {
+  .header-container {
+    margin-top: 11rem;
+  }
+
+  .accent__stick__left {
+    height: 49rem;
+  }
+
+  .accent__stick__right {
+    height: 49rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .navbar {
+    &__list {
+      display: none;
+    }
+
+    &__toggle {
+      display: block;
+    }
+  }
+
+  .header-container {
+    grid-template-areas:
+      'header header header'
+      'arrow slogan slogan';
+  }
+
+  .folder-icon-container {
+    display: none;
+  }
+
+  .slogan-container {
+    &__text {
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .header-container {
+    grid-template-areas:
+      ' header'
+      'slogan';
+  }
+  .arrow-icon-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1154px) {
+  .navbar__toggle {
+    color: $dark-blue;
+  }
+}
+
+@media screen and (max-width: 1001px) {
+  .accent__stick__left {
+    display: none;
+  }
+
+  .accent__stick__right {
+    display: none;
+  }
+
+  .slogan-container {
+    &__text {
+      font-size: 7.9vw;
+      line-height: 7vw;
+    }
+  }
+}

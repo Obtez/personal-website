@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./mixins";
+
+.container {
+  height: 100%;
+  margin: 0 25vw;
+
+  padding-top: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  img {
+   width: 1.41rem;
+   height: 5.81rem;
+  }
+}
+
+.skillItemContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-top: 1.7rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+
+  img {
+    width: auto;
+    height: 2rem;
+  }
+
+  p {
+  text-align: start;
+  white-space: pre-wrap;
+  font-weight: 300;
+  line-height: 24px;
+  color: $gray;
+  }
+}

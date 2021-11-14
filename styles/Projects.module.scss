@@ -1,0 +1,102 @@
+@import "./variables";
+@import "./mixins";
+
+.container {
+  height: 100%;
+  margin: 0 25vw;
+
+  padding: 4.5rem 0 1.5rem 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsContainer {
+  width: 100%;
+  background-color: $gray;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1.56rem 1rem;
+  justify-content: space-around;
+}
+
+.projectCard {
+  flex-basis: 17vw;
+  height: 26.5rem;
+  background-color: $off-white;
+  padding: 1.44rem;
+  border-radius: 5px;
+  -moz-box-shadow: 10px 10px 50px 5px rgba(0,0,0,.25);
+  -webkit-box-shadow: 10px 10px 50px 5px rgba(0,0,0,.25);
+  box-shadow: 10px 10px 50px 5px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+
+  transition: all .2s ease-in-out;
+  img {
+    border-radius: 5px;
+  }
+
+  .tech {
+    font-size: 1rem;
+    font-weight: 300;
+    color: $gray;
+  }
+
+  h3 {
+    margin-top: 0.63rem;
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 140%;
+  }
+
+  .btnContainer {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+
+    button {
+      @include btnDefault;
+      background-color: $accent;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: $off-white;
+      width: 7.5rem;
+      height: 2.3rem;
+      font-size: 1.13rem;
+      font-weight: 400;
+
+      &:hover {
+        font-weight: 500; 
+      }
+    }
+
+    a {
+      @include linkDefault;
+      display: flex;
+      align-items: center;
+      height: 2.3rem;
+      cursor: pointer;
+      font-size: 1.13rem;
+      font-weight: 400;
+
+      .githubIcon {
+        font-size: 1.2rem;
+        margin-right: .25rem;
+      }
+    }
+  }
+  
+  // ===============================
+  // CARD HOVER
+  // ===============================
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
