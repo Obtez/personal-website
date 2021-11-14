@@ -15,7 +15,7 @@
 
 .container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding: 3.5rem 0 0 0;
     display: flex;
     flex-direction: column;
@@ -113,4 +113,22 @@
   padding: 1rem;
   text-align: center;
   line-height: 120%;
+}
+
+@media screen and (max-width: 320px) {
+  .row {
+    flex-flow: column wrap;
+    margin: auto;
+  }
+
+  .contactForm {
+    input[type="submit"] {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  .contactForm {
+    width: 95%;
+  }
 }

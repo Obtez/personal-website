@@ -45,5 +45,23 @@
 
 .wave {
   margin-top: 2rem;
+  width: 100%;
+}
 
+@media screen and (max-width: 320px) {
+
+  .row {
+    flex-flow: column wrap;
+    gap: 2.5rem;
+  }
+
+  .card {
+    width: 95%;
+    margin: auto;
+  }
+
+  .wave {
+    margin-bottom: .4rem;
+    width: 100%;
+  }
 }
