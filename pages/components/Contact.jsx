@@ -15,7 +15,7 @@ const Contact = () => {
             <a href="https://github.com/Obtez" target="_blank" rel="noreferrer">
               <AiFillGithub className={styles.socialIcon} />
             </a>
-            <a href="https://www.linkedin.com/in/david-beer-821b95223/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/thedavidbeer/" target="_blank" rel="noreferrer">
               <AiFillLinkedin className={styles.socialIcon} />
             </a>
             <a href="https://twitter.com/thedavidbeer" target="_blank" rel="noreferrer">
