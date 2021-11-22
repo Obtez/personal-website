@@ -184,26 +184,14 @@
 }
 
 @media screen and (max-width: 1650px) {
-  .navbar {
-    &__list {
-      display: none;
-    }
 
-    &__toggle {
-      display: block;
-      
-    }
-  }
+  // .header-container {
+  //   grid-template-areas:
+  //     'header header header'
+  //     'arrow slogan slogan';
+  // }
 
-  .header-container {
-    grid-template-areas:
-      'header header header'
-      'arrow slogan slogan';
-  }
-
-  .folder-icon-container {
-    display: none;
-  }
+  
 
   .slogan-container {
     &__text {
@@ -219,6 +207,11 @@
       ' header'
       'slogan';
   }
+
+  .folder-icon-container {
+    display: none;
+  }
+
   .arrow-icon-container {
     display: none;
   }

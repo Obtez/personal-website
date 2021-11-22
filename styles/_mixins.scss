@@ -21,7 +21,7 @@
 }
 
 @mixin btnDefault {
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   cursor: pointer;
   &:hover {
     color: $accent;
