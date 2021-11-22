@@ -16,7 +16,7 @@
   background-color: $gray;
   display: flex;
   flex-flow: row wrap;
-  padding: 1.56rem 1rem;
+  padding: 2.5rem 1rem;
   justify-content: space-around;
 }
 
@@ -97,7 +97,7 @@
   // ===============================
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.12);
   }
 }
 

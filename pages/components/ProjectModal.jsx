@@ -1,0 +1,74 @@
+import {useState} from 'react'
+import { AiFillGithub } from 'react-icons/ai'
+import {IoCloseOutline} from 'react-icons/io5'
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
+import {FaPlayCircle} from 'react-icons/fa'
+import styles from "../../styles/ProjectModal.module.scss"
+
+const ProjectModal = ({ project, toggleModal }) => {
+  const [activeImage, setActiveImage] = useState(0)
+
+  function handleNextImage() {
+    if (activeImage < project.image.length - 1) {
+      setActiveImage(activeImage + 1)
+    } else {
+      setActiveImage(0)
+    }
+  }
+
+  function handlePreviousImage() {
+    if (activeImage > 0) {
+      setActiveImage(activeImage - 1)
+    } else {
+      setActiveImage(project.image.length - 1)
+    }
+  }
+
+  return (
+    <div className={styles.modalContainer}>
+      <div className={styles.projectModal}>
+        <IoCloseOutline className={styles.closeBtn} onClick={() => toggleModal(null)}/>
+        <div className={styles.descriptionContainer}>
+          <h3 className={styles.projectTitle}>{project.title}</h3>
+          <p className={styles.projectTech}>{project.tech}</p>
+          <p className={styles.projectSummary}>{ project.description }</p>
+           <div className={styles.btnContainer}>
+            <a href="#" className={styles.primaryBtn}>Contact Me</a>
+            <a href="#" className={styles.secondaryBtn}><AiFillGithub /> GitHub</a>
+            <a href="#" className={styles.secondaryBtn}><FaPlayCircle /> Demo</a>
+          </div>
+        </div>
+        <div className={styles.projectImageContainer}>
+          <div className={styles.controlsOverlay}>
+            <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
+              <BsChevronLeft className={styles.arrowLeft} />
+            </div>
+          <div className={styles.arrowRightContainer} onClick={handleNextImage}>
+              <BsChevronRight className={styles.arrowRight} />
+          </div>
+          </div>
+          <div className={styles.projectImageCarousel}>
+            <img src={project.image[activeImage]} alt={project.title} />
+            
+          </div>
+          
+        </div>
+        <div/>
+        <div className={styles.controls}>
+          {
+            project.image.map((image, index) => {
+              return (
+                <div key={index} className={index === activeImage ? styles.active : null}>
+                  
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+     
+    </div>
+  )
+}
+
+export default ProjectModal;

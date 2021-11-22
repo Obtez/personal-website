@@ -6,7 +6,6 @@ import SkillsScreen from './components/SkillsScreen';
 import WhyMe from './components/WhyMe';
 import styles from '../styles/Home.module.scss';
 import Contact from './components/Contact';
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
