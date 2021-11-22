@@ -19,7 +19,7 @@ const projects = [
     url: "https://www.github.com"
   },
   {
-    image: ["/assets/project-images/hedgeycards.png", "/assets/project-images/hedgeycards.png", "/assets/project-images/hedgeycards.png"],
+    image: ["/assets/project-images/hedgeycards.png", "/assets/project-images/hedgeycards2.png", "/assets/project-images/hedgeycards3.png"],
     tech: "HTML, CSS, React",
     title: "Project Title",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",

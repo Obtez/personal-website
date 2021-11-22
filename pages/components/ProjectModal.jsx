@@ -39,14 +39,18 @@ const ProjectModal = ({ project, toggleModal }) => {
           </div>
         </div>
         <div className={styles.projectImageContainer}>
-          <div className={styles.controlsOverlay}>
-            <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
-              <BsChevronLeft className={styles.arrowLeft} />
+          {
+            project.image.length > 1 && (
+             <div className={styles.controlsOverlay}>
+              <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
+                <BsChevronLeft className={styles.arrowLeft} />
+              </div>
+            <div className={styles.arrowRightContainer} onClick={handleNextImage}>
+                <BsChevronRight className={styles.arrowRight} />
             </div>
-          <div className={styles.arrowRightContainer} onClick={handleNextImage}>
-              <BsChevronRight className={styles.arrowRight} />
-          </div>
-          </div>
+            </div>
+            )
+          }
           <div className={styles.projectImageCarousel}>
             <img src={project.image[activeImage]} alt={project.title} />
             
