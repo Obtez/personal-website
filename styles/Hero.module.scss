@@ -45,6 +45,10 @@
     font-weight: 300;
   }
 
+  &__list__mobile {
+    display: none;
+  }
+
   &__link {
     margin-left: 1.875rem;
     color: white;
@@ -184,15 +188,6 @@
 }
 
 @media screen and (max-width: 1650px) {
-
-  // .header-container {
-  //   grid-template-areas:
-  //     'header header header'
-  //     'arrow slogan slogan';
-  // }
-
-  
-
   .slogan-container {
     &__text {
       font-size: 5rem;
@@ -241,36 +236,137 @@
 }
 
 
-@media screen and (max-width: 320px) {
-
-  .container {
-    width: 100%;
+@media screen and (max-width: 568px) {
+  .navbar {
+    padding: 0;
   }
 
-  .header-container {
-    margin-top: 0;
-  }
+   .mobileMenu {
+    display: block;
+    color: $off-white;
+    position: absolute;
+    top: 2vw;
+    right: 2.5vw;
+    font-size: 7.5vw;
+    z-index: 50;
 
-  .header {
-    h1 {
-      font-size: 2.5rem;
+    .toggle__icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 51;
     }
   }
 
-  .header {
-    &__btn-container {
-      &__secondaryBtn {
-        margin: auto;
-        margin-top: 1rem;
-        color: $off-white;
-      }
+  .navbar {
+    &__list {
+      display: none;
+    }
 
-      &__btnIcon {
-        color: $off-white;
+    .mobile__menu__container {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(37, 46, 66, 0.8);
+
+      .toggle__icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    &__list__mobile {
+      width: 66%;
+      margin-left: auto;
+      list-style-type: none;
+      background-color: $text;
+      height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: .5rem;
+
+      li {
+        a {
+          font-size: 1.25rem;
+        }
       }
     }
   }
+
+  .hero {
+    width: 100vw;
+    background: url('/assets/mobile/hero-bottom-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    position: relative;
+
+    .hero__top {
+      position: absolute;
+      width: 100vw;
+      height: 20vh;
+      background: url('/assets/mobile/hero-top-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top right;
+    }
+
+    .container {
+      width: 100vw;
+      padding: 2vw 4vw 4vw 4vw;
+    }
+
+    .header-container {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .header {
+        margin-top: 10vw;
+        text-align: start;
+        h2 {
+          font-size: 7vw;
+          line-height: 1.875rem;
+        }
+
+        h1 {
+          font-size: 11.7vw;
+          line-height: 120%;
+        }
+
+        &__btn-container {
+          width: 100%;
+          &__primaryBtn {
+            font-size: 5vw;
+            width: 42vw;
+            padding: 1.3vw 0;
+          }
+
+          &__secondaryBtn {
+            font-size: 5vw;
+            display: inline-block;
+            margin-left: 5vw;
+          }
+        }
+       
+      }
+    }
+  }
+
   .slogan-container {
-    padding: 0 2.5%;
+    align-self: center;
+    
+    &__text {
+      line-height: 125%;
+      text-align: center;
+      font-size: 11vw;
+    }
   }
+
+ 
 }

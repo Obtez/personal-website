@@ -55,7 +55,7 @@ const SkillsScreen = () => {
 
   return (
     <section id="skills" className={styles.container}>
-      <h2>.skills</h2>
+      <h2>.tech</h2>
       <div className={styles.row}>
       <img className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" />
       <ul className={styles.skillItemContainer}>

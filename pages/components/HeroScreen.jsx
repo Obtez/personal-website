@@ -6,11 +6,13 @@ import Navbar from './Navbar';
 const HeroScreen = () => {
   return (
     <div className={styles.hero}>
+      <div className={styles.hero__top}></div>
       <div className={styles.accent__stick__left} />
       <div className={styles.accent__stick__right} />
       <Navbar />
       <div className={styles.container}>
-      <div className={styles['header-container']}>
+        <div className={styles['header-container']}>
+          <div></div>
       <div className={styles['header']}>
             <h2>David Beer,</h2>
             <h1>
@@ -36,7 +38,7 @@ const HeroScreen = () => {
           </div>
           <div className={styles['slogan-container']}>
             <p className={styles['slogan-container__text']}>
-              MOTIVATED TO <br /> WORK WITH{' '}
+              MOTIVATED TO  <br /> WORK WITH{' '}
               <span className={styles['slogan-container__text__accent']}>
                 YOU
               </span>
