@@ -5,7 +5,7 @@
   .container {
     width: 95%;
     margin: auto;
-    padding-top: 2.5rem;
+    padding-top: 5rem;
   }
 
   .row {
@@ -21,8 +21,6 @@
     .bracket {
       display: none;
     }
-
-   
   }
   
 
@@ -64,7 +62,6 @@
     flex-flow: row nowrap;
     list-style-type: none;
     justify-content: space-between;
-    margin-top: 1.7rem;
   }
 
   .skillItem {

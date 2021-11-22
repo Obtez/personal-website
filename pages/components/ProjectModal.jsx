@@ -25,8 +25,8 @@ const ProjectModal = ({ project, toggleModal }) => {
   }
 
   return (
-    <div className={styles.modalContainer}>
-      <div className={styles.projectModal}>
+    <div className={styles.modalContainer} onClick={() => toggleModal(null)}>
+      <div className={styles.projectModal} onClick={(e) => {e.stopPropagation()}}>
         <IoCloseOutline className={styles.closeBtn} onClick={() => toggleModal(null)}/>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.projectTitle}>{project.title}</h3>

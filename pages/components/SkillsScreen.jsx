@@ -20,6 +20,10 @@ const skillsList = [
     url: "js",
     text: "JavaScript"
   },
+   {
+    url: "typescript",
+    text: "TypeScript"
+  },
   {
     url: "react",
     text: "React"
@@ -31,10 +35,6 @@ const skillsList = [
   {
     url: "nextjs",
     text: "Next.js"
-  },
-  {
-    url: "python",
-    text: "Python"
   },
   {
     url: "mongodb",
