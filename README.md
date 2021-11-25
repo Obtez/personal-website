@@ -1,4 +1,7 @@
 # Portfolio Page
 
 ## Contributors
-- Olya Vlasak (https://github.com/daduckster)
+- Olya Vlasak
+  - Contribution: further styling
+  - Email: mailto:vlasak.olg@gmail.com
+  - GitHub: https://github.com/daduckster
