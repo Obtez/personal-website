@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic'
 import {useState} from 'react'
-import ProjectCard from "./ProjectCard"
-import ProjectModal from "./ProjectModal"
+const ProjectCard = dynamic(() => import('./ProjectCard'))
+const ProjectModal = dynamic(() => import('./ProjectModal'))
 import styles from "../../styles/Projects.module.scss"
 
 const projects = [
