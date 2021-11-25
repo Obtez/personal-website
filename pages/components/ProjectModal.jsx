@@ -8,6 +8,10 @@ import styles from "../../styles/ProjectModal.module.scss"
 const ProjectModal = ({ project, toggleModal }) => {
   const [activeImage, setActiveImage] = useState(0)
 
+  if (!project) {
+    return null;
+  }
+
   function handleNextImage() {
     if (activeImage < project.image.length - 1) {
       setActiveImage(activeImage + 1)
