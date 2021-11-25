@@ -2,7 +2,11 @@ import Image from "next/image"
 import { BsGithub } from "react-icons/bs"
 import styles from "../../styles/Projects.module.scss"
 
-const ProjectCard = ({project, toggleModal}) => {
+const ProjectCard = ({ project, toggleModal }) => {
+  if (!project) {
+    return null;
+  }
+
   return (
     <div className={styles.projectCard}>
 
