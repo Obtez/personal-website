@@ -22,7 +22,7 @@ const ContactForm = () => {
 
       <div className={styles.formGroup}>
         <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="7"></textarea>
+        <textarea name="message" id="message" cols="30"></textarea>
       </div>
 
 

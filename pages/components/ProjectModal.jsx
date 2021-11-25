@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { AiFillGithub } from 'react-icons/ai'
+import { BsGithub } from 'react-icons/bs'
 import {IoCloseOutline} from 'react-icons/io5'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import {FaPlayCircle} from 'react-icons/fa'
@@ -34,7 +34,7 @@ const ProjectModal = ({ project, toggleModal }) => {
           <p className={styles.projectSummary}>{ project.description }</p>
            <div className={styles.btnContainer}>
             <a href="#" className={styles.primaryBtn}>Contact Me</a>
-            <a href="#" className={styles.secondaryBtn}><AiFillGithub /> GitHub</a>
+            <a href="#" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
             <a href="#" className={styles.secondaryBtn}><FaPlayCircle /> Demo</a>
           </div>
         </div>
@@ -57,7 +57,7 @@ const ProjectModal = ({ project, toggleModal }) => {
           </div>
           
         </div>
-        <div/>
+        <div className={styles.buffer}/>
         <div className={styles.controls}>
           {
             project.image.map((image, index) => {

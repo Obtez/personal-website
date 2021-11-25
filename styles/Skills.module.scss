@@ -1,92 +1,237 @@
 @import "./variables";
 @import "./mixins";
 
-@media screen {
-  .container {
-    width: 95%;
-    margin: auto;
-    padding-top: 5rem;
-  }
-
-  .row {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-
-     img {
-      width: 30%;
-      height: auto;
-    }
-
-    .bracket {
-      display: none;
-    }
-  }
-  
-
-  .skillItemContainer {
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 30% 30% 30%;
-    gap: 1rem;
-    list-style: none;
-  }
+.container {
+	width: auto;
+	margin: 0 25vw;
+	padding-top: 5rem;
 }
 
-@media screen and (min-width: 1400px) {
-  .container {
-    width: auto;
-    margin: 0 25vw;
-  }
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	margin-top: 1rem;
 
-  .row {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin-top: 1.5rem;
+	img {
+		width: 1.41rem;
+		height: 5.81rem;
+	}
 
-    img {
-     width: 1.41rem;
-     height: 5.81rem;
-    }
-
-    .bracket {
-      display: inline-block;
-    }
-  }
-
-  .skillItemContainer {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    list-style-type: none;
-    justify-content: space-between;
-  }
-
-  .skillItem {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    text-align: center;
-    height: fit-content;
-
-    img {
-      width: auto;
-      height: 2rem;
-    }
-
-    p {
-    text-align: start;
-    white-space: pre-wrap;
-    font-weight: 300;
-    line-height: 24px;
-    color: $gray;
-    }
-  }
+	.bracket {
+		display: inline-block;
+	}
 }
 
+.skillItemContainer {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	list-style-type: none;
+	justify-content: space-between;
+	margin-top: 0.5rem;
+}
 
+.skillItem {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	text-align: center;
+	height: fit-content;
 
+	img {
+		width: auto;
+		height: 2rem;
+	}
 
+	p {
+		text-align: start;
+		white-space: pre-wrap;
+		font-weight: 300;
+		line-height: 24px;
+		color: $medium-blue;
+	}
+}
 
+//for squeezed MAC and 1920px
+@media screen and (max-width: 1450px) {
+	.container {
+		margin: 0 15vw;
+
+		h2 {
+			margin-left: 10vw;
+		}
+	}
+}
+
+// for 1536px
+@media screen and (max-height: 880px) and (max-width: 1536px) {
+	.container {
+		padding-top: 3.5rem;
+	}
+
+	.row {
+		margin-top: 1rem;
+	}
+
+	.skillItem {
+		img {
+			height: 1.7rem;
+		}
+
+		p {
+			font-size: 0.86rem;
+		}
+	}
+}
+
+// for 1366px
+@media screen and (max-height: 729px) and (max-width: 1366px) {
+	.container {
+		margin: 0 20vw;
+		padding-top: 2.5rem;
+
+		h2 {
+			margin-left: 5vw;
+		}
+	}
+
+	.row {
+		margin-top: 0.3rem;
+	}
+
+	.skillItem {
+		img {
+			height: 1.5rem;
+		}
+	}
+}
+
+// for squeezed 1366px
+@media screen and (max-height: 729px) and (max-width: 1165px) {
+	.container {
+		margin: 0 15vw;
+
+		h2 {
+			margin-left: 10vw;
+		}
+	}
+}
+
+// for all <1320
+@media screen and (max-width: 1320px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 4.5rem 0.5rem 0 0.5rem;
+
+		h2 {
+			margin-left: 1.5rem;
+		}
+	}
+
+	.row {
+		margin: 2.5vw 15vw 0 15vw;
+	}
+}
+
+//for IPAD PRO
+@media screen and (max-width: 1024px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 5rem 0.5rem 0 0.5rem;
+
+		h2 {
+			margin-left: 1.5rem;
+		}
+	}
+
+	.row {
+		margin: 0;
+		margin-top: 1.5rem;
+	}
+
+	.skillItem {
+		img {
+			width: auto;
+			height: 3.8vw;
+		}
+	}
+}
+
+//for IPAD
+@media screen and (min-height: 1024px) and (max-width: 768px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 4rem 0.5rem 0 0.5rem;
+
+		h2 {
+			margin-left: 1rem;
+		}
+	}
+}
+
+//for all <800px
+@media screen and (max-width: 800px) {
+	.skillItem {
+		p {
+			font-size: 0.9rem;
+		}
+	}
+}
+
+// for PHONES
+@media screen and (min-height: 568px) and (max-width: 680px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 10vw 4vw 0 4vw;
+
+		h2 {
+			text-align: start;
+			margin-left: 0;
+		}
+	}
+
+	.row {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		margin-top: 6vw;
+
+		img {
+			width: 8vw;
+			height: auto;
+		}
+
+		.bracket {
+			display: none;
+		}
+	}
+
+	.skillItemContainer {
+		width: 100%;
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 30% 30% 30%;
+		gap: 1rem;
+		list-style: none;
+	}
+}
+
+//for phones HORIZONTAL
+@media screen and (max-width: 812px) and (max-height: 567px) {
+	.container {
+		h2 {
+			text-align: start;
+		}
+	}
+
+	.skillItem {
+		p {
+			font-size: 0.86rem;
+		}
+	}
+}
