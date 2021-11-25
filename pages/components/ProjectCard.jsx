@@ -16,7 +16,7 @@ const ProjectCard = ({ project, toggleModal }) => {
 
       <h3>{project.title}</h3>
 
-      <p className={styles.description}>{project.description}</p>
+      <p className={styles.description}>{project.summary}</p>
 
       <div className={styles.btnContainer}>
       <button type="button" onClick={() => toggleModal(project)}>Details</button>
