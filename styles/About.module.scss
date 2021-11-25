@@ -1,23 +1,97 @@
 @import "./mixins";
 
 .container {
-    @include container;
+	height: 100%;
+	width: 50%;
+	margin: auto;
+	padding: 6rem 0 0 0;
+	display: flex;
+	flex-direction: column;
 
-    h2 {
-      margin-bottom: 1.5rem;
-    }
+	h2 {
+		margin-bottom: 1rem;
+	}
 
-    p {
-      font-size: 1.13rem;
-      line-height: 200%;
-    }
+	p {
+		font-size: 1.13rem;
+		line-height: 200%;
+	}
 }
 
+// for 1536px
+@media screen and (max-height: 880px) and (max-width: 1536px) {
+	.container {
+		padding-top: 4rem;
+	}
+}
+
+// for 1366px
+@media screen and (max-height: 729px) and (max-width: 1366px) {
+	.container {
+		padding-top: 3rem;
+
+		p {
+			font-size: 1.05rem;
+		}
+	}
+}
+
+// for 1229px
+@media screen and (max-height: 624px) and (max-width: 1229px) {
+	.container {
+		p {
+			font-size: 1rem;
+			line-height: 190%;
+		}
+	}
+}
+
+//for all <1320px
+@media screen and (max-height: 1050px) and (max-width: 1320px) {
+	.container {
+		padding: 5rem 2rem 2rem 2rem;
+		text-align: left;
+		width: 100%;
+		margin: auto;
+
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+//for IPAD PRO
+@media screen and (min-height: 1366px) and (max-width: 1024px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 5rem 2rem 2rem 2rem;
+
+		h2 {
+			margin-bottom: 2vw;
+		}
+	}
+}
+
+//for IPAD
+@media screen and (min-height: 1024px) and (max-width: 768px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 4rem 1.5rem 1.5rem 1.5rem;
+	}
+}
+
+// for PHONES
 @media screen and (max-width: 568px) {
-  .container {
-    padding: 0 4vw;
-    text-align: left;
-    width: 100%;
-    margin: auto;
-  }
+	.container {
+		padding: 13vw 4vw 0 4vw;
+		text-align: left;
+		width: 100%;
+		margin: auto;
+
+		h2 {
+			margin-bottom: 3vw;
+		}
+	}
 }

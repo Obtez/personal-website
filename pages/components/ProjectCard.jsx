@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { AiFillGithub } from "react-icons/ai"
+import { BsGithub } from "react-icons/bs"
 import styles from "../../styles/Projects.module.scss"
 
 const ProjectCard = ({project, toggleModal}) => {
@@ -16,7 +16,7 @@ const ProjectCard = ({project, toggleModal}) => {
 
       <div className={styles.btnContainer}>
       <button type="button" onClick={() => toggleModal(project)}>Details</button>
-      <a type="button"><AiFillGithub className={styles.githubIcon} /> GitHub</a>
+      <a type="button"><BsGithub className={styles.githubIcon} /> GitHub</a>
       </div>
     </div>
   )

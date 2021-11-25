@@ -2,183 +2,625 @@
 @import "./mixins";
 
 .modalContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(37, 46, 66, 0.8);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.projectModal {
+	background-color: $off-white;
+	position: relative;
+	border-radius: 6px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 0 1.5rem;
+	width: 75vw;
+	padding: 2.2rem 2.2rem 0.5rem 2.2rem;
 
-  background-color: rgba(37, 46, 66, 0.8);
+	.closeBtn {
+		position: absolute;
+		top: 0.4rem;
+		right: 0.3rem;
+		background-color: transparent;
+		border: none;
+		font-size: 2rem;
+		cursor: pointer;
+		color: $gray;
 
-  .projectModal {
-    background-color: $off-white;
-    position: relative;
-    border-radius: 6px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0 1.5rem;
-    width: 75vw;
-    padding: 3.75rem 3.38rem 1.75rem 3.38rem;
+		&:hover {
+			color: $accent;
+		}
+	}
 
-    .closeBtn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: transparent;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: $gray;
-      
-      &:hover {
-        color: $accent;
-      }
-    }
+	.controls {
+		padding: .5rem;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		gap: 1rem;
 
-    .descriptionContainer {
-      display: flex;
-      flex-flow: column nowrap;
+		div {
+			width: .81rem;
+			height: .81rem;
+			background-color: $light-gray;
+			border-radius: 100%;
+			cursor: pointer;
 
-      .projectTitle {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: $dark-blue;
-      }
-      .projectTech {
-        margin-top: 1rem;
-        font-weight: 300;
-        color: $gray;
-        font-size: 1.2rem;
-      }
-      .projectSummary {
-        margin-top: 1rem;
-        line-height: 200%;
-        color: $dark-blue;
-        flex-grow: 1;
-        overflow-y: auto;
-      }
-      .btnContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 1rem;
-        a {
-          text-decoration: none;
-        }
-        
-        .primaryBtn {
-          @include btnDefault;
-          padding: .3rem 1.7rem;
-          font-size: 1.2rem;
-          color: $off-white;
-          background-color: $accent;
-          border-radius: 6px;
-          cursor: pointer;
-          border: 3px solid transparent;
+			&:hover {
+				background-color: $gray;
+			}
+		}
 
-          &:hover {
-            background-color: transparent;
-            color: $accent;
-            border: 3px solid $accent;
-            font-weight: 500;
-          }
-        }
+		.active {
+			background-color: $medium-blue;
+		}
+	}
+}
 
-        .secondaryBtn {
-          display: flex;
-          align-items: center;
-          gap: .3rem;
-          font-size: 1.1rem;
-          color: $dark-blue;
-          font-weight: 300;
+.descriptionContainer {
+	display: flex;
+	flex-flow: column nowrap;
 
-          &:hover {
-            color: $accent;
-          }
-        }
-      }
-    }
+	.projectTitle {
+		font-size: 1.7rem;
+		font-weight: 700;
+		color: $dark-blue;
+	}
+	.projectTech {
+		margin-top: 1rem;
+		font-weight: 300;
+		color: $medium-blue;
+		font-size: 1.2rem;
+	}
+	.projectSummary {
+		margin-top: 1rem;
+		line-height: 200%;
+		color: $dark-blue;
+		flex-grow: 1;
+		overflow-y: auto;
+	}
+}
 
-    .projectImageContainer{
-      position: relative;
+.btnContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.5rem;
+	width: 90%;
 
-      .controlsOverlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border-radius: 6px;
-        display: flex;
-        justify-content: space-between;
-        opacity: 0;
+	a {
+		text-decoration: none;
+	}
 
-        &:hover {
-          opacity: 1;
-        }
+	.primaryBtn {
+		@include btnDefault;
+		padding: .3rem 1.7rem;
+		font-size: 1.2rem;
+		color: $off-white;
+		background-color: $accent;
+		border-radius: 6px;
+		cursor: pointer;
+		border: 3px solid transparent;
 
-        .arrowLeftContainer,
-        .arrowRightContainer {
-          height: 100%;
-          width: 10%;
-          background-color: $off-white;
-          opacity: 0.2;
+		&:hover {
+			background-color: transparent;
+			color: $accent;
+			border: 3px solid $accent;
+			font-weight: 500;
+		}
+	}
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
+	.secondaryBtn {
+		display: flex;
+		align-items: center;
+		gap: .3rem;
+		font-size: 1.1rem;
+		color: $medium-blue;
+		font-weight: 300;
 
-          cursor: pointer;
+		&:hover {
+			color: $accent;
+		}
+	}
+}
 
-          &:hover {
-            opacity: .7;
-          }
+.projectImageContainer {
+	position: relative;
 
-          .arrowLeft,
-          .arrowRight {
-            font-size: 2rem;
-            color: $dark-blue;
-          }
-        }
-      }
+	.controlsOverlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border-radius: 6px;
+		display: flex;
+		justify-content: space-between;
+		opacity: 0;
 
-      .projectImageCarousel {
-        img {
-          width: 100%;
-          height: auto;
-          border-radius: 6px;
-          display: block;
-          margin-left: auto;
-        }
-      }
-    }
-  }
-   .controls {
-    padding: .5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    gap: 1rem;
-    div {
-      width: .81rem;
-      height: .81rem;
-      background-color: $light-gray;
-      border-radius: 100%;
-      cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
 
-      &:hover {
-        background-color: $gray;
-      }
-    }
+		.arrowLeftContainer,
+		.arrowRightContainer {
+			height: 100%;
+			width: 8%;
+			background-color: $off-white;
+			opacity: 0.2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
 
-    .active {
-      background-color: $gray;
-    }
-  }
-  
+			&:hover {
+				opacity: .4;
+			}
+
+			.arrowLeft,
+			.arrowRight {
+				font-size: 2rem;
+				color: $dark-blue;
+			}
+		}
+	}
+
+	.projectImageCarousel {
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 6px;
+			display: block;
+			margin-left: auto;
+		}
+	}
+}
+
+//for 1920px
+@media screen and (min-height: 881px) and (min-width: 1800px) {
+	.btnContainer {
+		margin-right: 3rem;
+	}
+}
+
+//for squeezed MAC and 1920px
+@media screen and (min-height: 881px) and (max-width: 1620px) {
+	.btnContainer {
+		width: 10.8rem;
+
+		.secondaryBtn {
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+// for 1536px
+@media screen and (max-height: 880px) and (max-width: 1536px) {
+	.projectModal {
+		padding: 2.3rem 2.3rem 0.7rem 2.3rem;
+
+		.closeBtn {
+			top: 0.5rem;
+			right: 0.5rem;
+			font-size: 1.7rem;
+		}
+
+		.controls {
+			gap: 0.75rem;
+
+			div {
+				width: .7rem;
+				height: .7rem;
+			}
+		}
+	}
+
+	.descriptionContainer {
+		.projectTitle {
+			font-size: 1.5rem;
+		}
+
+		.projectTech {
+			margin-top: 0.7rem;
+			font-size: 1.1rem;
+		}
+		.projectSummary {
+			margin-top: 0.7rem;
+			line-height: 180%;
+		}
+	}
+
+	.btnContainer {
+		margin-right: 1rem;
+		margin-top: 1rem;
+
+		.primaryBtn {
+			padding: .2rem 1.4rem;
+			font-size: 1.1rem;
+		}
+
+		.secondaryBtn {
+			gap: .2rem;
+			font-size: 1rem;
+		}
+	}
+}
+
+// for squeezed 1536px
+@media screen and (max-height: 880px) and (max-width: 1370px) {
+	.btnContainer {
+		width: 9.6rem;
+
+		.secondaryBtn {
+			margin-top: 0.3rem;
+		}
+	}
+}
+
+// for 1366px
+@media screen and (max-width: 1366px) {
+	.projectModal {
+		padding: 1.2rem 1.2rem 0rem 1.2rem;
+		width: 85vw;
+
+		.closeBtn {
+			top: 0rem;
+			right: 0rem;
+			font-size: 1.5rem;
+		}
+
+		.controls {
+			gap: 0.65rem;
+
+			div {
+				width: .55rem;
+				height: .55rem;
+			}
+		}
+	}
+
+	.descriptionContainer {
+		.projectTitle {
+			font-size: 1.3rem;
+		}
+
+		.projectTech {
+			margin-top: 0.4rem;
+			font-size: 1rem;
+		}
+		.projectSummary {
+			margin-top: 0.4rem;
+			line-height: 170%;
+			font-size: 1rem;
+		}
+	}
+
+	.btnContainer {
+		margin-top: 0.7rem;
+		width: 95%;
+
+		.primaryBtn {
+			padding: .1rem 1.2rem;
+			font-size: 1rem;
+		}
+
+		.secondaryBtn {
+			font-size: 0.86rem;
+		}
+	}
+}
+
+// for squeezed 1366px
+@media screen and (max-width: 1232px) {
+	.btnContainer {
+		width: 8.6rem;
+	}
+}
+
+// for all <1000px
+@media screen and (max-width: 1000px) {
+	.projectModal {
+		width: 95vw;
+	}
+}
+
+// for all < 770
+@media screen and (max-width: 770px) {
+	.projectModal {
+		display: flex;
+		flex-direction: column-reverse;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding: 1.5rem;
+		width: 70vw;
+
+		.closeBtn {
+			top: 0.2rem;
+			right: 0rem;
+			font-size: 1.8rem;
+			z-index: 10;
+		}
+
+		.buffer {
+			display: none;
+		}
+
+		.controls {
+			display: none;
+		}
+	}
+
+	.descriptionContainer {
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.projectTitle {
+			margin-top: 0.8rem;
+			font-size: 1.5rem;
+		}
+		.projectTech {
+			margin-top: 0.8rem;
+			font-size: 1rem;
+		}
+		.projectSummary {
+			margin-top: 0.7rem;
+			line-height: 190%;
+		}
+	}
+
+	.btnContainer {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+
+		.secondaryBtn {
+			margin-left: .5rem;
+		}
+	}
+}
+
+//for IPAD PRO
+@media screen and(min-height: 1366px) and (max-width: 1024px) {
+	.projectModal {
+		width: 92vw;
+	}
+}
+
+//for IPAD
+@media screen and (min-height: 900px) and (max-width: 1024px) {
+	.projectModal {
+		display: flex;
+		flex-direction: column-reverse;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding: 1.5rem;
+		width: 92vw;
+
+		.closeBtn {
+			top: 0.2rem;
+			right: 0rem;
+			font-size: 1.8rem;
+			z-index: 10;
+		}
+
+		.buffer {
+			display: none;
+		}
+
+		.controls {
+			display: none;
+		}
+	}
+
+	.descriptionContainer {
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.projectTitle {
+			margin-top: 0.8rem;
+			font-size: 1.5rem;
+		}
+		.projectTech {
+			margin-top: 0.8rem;
+			font-size: 1rem;
+		}
+		.projectSummary {
+			margin-top: 0.7rem;
+			line-height: 190%;
+		}
+	}
+
+	.btnContainer {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+
+		.secondaryBtn {
+			margin-left: .5rem;
+		}
+	}
+}
+
+// for PHONES
+@media screen and (min-height: 568px) and (max-width: 567px) {
+	.projectModal {
+		top: 12vw;
+		bottom: 12vw;
+		position: fixed;
+		display: flex;
+		width: 92vw;
+		height: auto;
+		flex-direction: column-reverse;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding: 6.5vw 4vw 5vw 4vw;
+
+		.closeBtn {
+			top: -0.1rem;
+			right: 0rem;
+			font-size: 1.8rem;
+			z-index: 10;
+		}
+
+		.buffer {
+			display: none;
+		}
+
+		.controls {
+			display: none;
+		}
+	}
+
+	.descriptionContainer {
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.projectTitle {
+			margin-top: 0.8rem;
+			font-size: 1.5rem;
+		}
+		.projectTech {
+			margin-top: 0.8rem;
+			font-size: 1rem;
+		}
+		.projectSummary {
+			margin-top: 0.7rem;
+			line-height: 190%;
+		}
+	}
+
+	.btnContainer {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 1rem;
+		width: 100%;
+
+		a {
+			text-decoration: none;
+		}
+
+		.primaryBtn {
+			@include btnDefault;
+			padding: .3rem 1.3rem;
+			font-size: 1.1rem;
+		}
+
+		.secondaryBtn {
+			gap: .2rem;
+			font-size: 1rem;
+			margin-left: .5rem;
+
+			svg {
+				height: 0.92rem;
+			}
+		}
+	}
+
+	.projectImageContainer {
+		.controlsOverlay {
+			display: none;
+		}
+	}
+}
+
+//for phones HORIZONTAL
+@media screen and (max-width: 812px) and (max-height: 567px) {
+	.projectModal {
+		top: 2vh;
+		bottom: 2vh;
+		position: fixed;
+		display: flex;
+		width: 76vw;
+		height: auto;
+		flex-direction: column-reverse;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding: 6.5vh 4vh 5vh 4vh;
+
+		.closeBtn {
+			top: -0.1rem;
+			right: 0rem;
+			font-size: 1.8rem;
+			z-index: 10;
+		}
+
+		.buffer {
+			display: none;
+		}
+
+		.controls {
+			display: none;
+		}
+	}
+
+	.descriptionContainer {
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.projectTitle {
+			margin-top: 0.8rem;
+			font-size: 1.5rem;
+		}
+		.projectTech {
+			margin-top: 0.8rem;
+			font-size: 1rem;
+		}
+		.projectSummary {
+			margin-top: 0.7rem;
+			line-height: 190%;
+		}
+	}
+
+	.btnContainer {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 1rem;
+		width: 100%;
+
+		a {
+			text-decoration: none;
+		}
+
+		.primaryBtn {
+			@include btnDefault;
+			padding: .3rem 1.3rem;
+			font-size: 1.1rem;
+		}
+
+		.secondaryBtn {
+			gap: .2rem;
+			font-size: 1rem;
+			margin-left: .5rem;
+
+			svg {
+				height: 0.92rem;
+			}
+		}
+	}
+
+	.projectImageContainer {
+		.controlsOverlay {
+			display: none;
+		}
+	}
 }
