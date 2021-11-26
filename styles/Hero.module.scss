@@ -1,372 +1,851 @@
 @import './variables';
 @import './mixins';
 
+.mobileMenu {
+	display: none;
+}
+
 .hero {
-  height: 100vh;
-  background-image: url('/assets/Blue Wave Background.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
+	height: 100vh;
+	background-image: url('/assets/Blue Wave Background.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .accent__stick__left {
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-  width: 0px;
-  height: 49rem;
-  border: 0.313rem solid $light-blue;
-  border-radius: 3.125rem;
-  margin-left: 15vw; // 260px // 16.25rem
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	width: 0px;
+	height: 77vh;
+	border: 0.313rem solid $light-blue;
+	border-radius: 3.125rem;
+	margin-left: 15vw; // 260px // 16.25rem
 }
 
 .accent__stick__right {
-  position: absolute;
-  bottom: 0;
-  width: 0px;
-  height: 49rem;
-  border: 0.313rem solid #838b9d;
-  border-radius: 3.125rem;
-  margin-left: 85vw; // 103.75rem
+	position: absolute;
+	bottom: 0;
+	width: 0px;
+	height: 77vh;
+	border: 0.313rem solid #838b9d;
+	border-radius: 3.125rem;
+	margin-left: 85vw; // 103.75rem
 }
 
 .container {
-  @include heroContainer;
+	width: 60vw;
+	height: 100%;
+	margin: auto;
+	padding-top: 2.25rem;
+	padding-bottom: 4.5rem;
+
+	display: flex;
+	flex-direction: column;
 }
 
 .navbar {
-  margin: 0 15vw;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: flex-end;
-  &__list {
-    // border:1px solid red;
-    display: flex;
-    list-style-type: none;
-    font-weight: 300;
-  }
+	margin: 0 15vw;
+	padding: 1rem 0;
+	display: flex;
+	justify-content: flex-end;
+	&__list {
+		// border:1px solid red;
+		display: flex;
+		list-style-type: none;
+		font-weight: 300;
+	}
 
-  &__list__mobile {
-    display: none;
-  }
+	&__list__mobile {
+		display: none;
+	}
 
-  &__link {
-    margin-left: 1.875rem;
-    color: white;
-    font-weight: 300;
-    font-size: 1rem;
-    text-decoration: none;
-    mix-blend-mode: difference;
+	&__link {
+		margin-left: 1.875rem;
+		color: white;
+		font-weight: 300;
+		font-size: 1rem;
+		text-decoration: none;
+		mix-blend-mode: difference;
 
-    &:hover {
-      color: $light-blue;
-      mix-blend-mode: normal
-    }
-  }
+		&:hover {
+			color: $light-blue;
+			mix-blend-mode: normal;
+		}
+	}
 
-  &__toggle {
-    display: none;
-    color: $off-white;
-    font-size: 1.7rem;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-  }
+	&__toggle {
+		display: none;
+		color: $off-white;
+		font-size: 1.7rem;
+		position: absolute;
+		top: 8px;
+		right: 8px;
+	}
 }
 
 // everything except navbar
 .header-container {
-  margin-top: 9.188rem;
+	margin-top: 15vh;
 
-  flex-grow: 1;
+	flex-grow: 1;
 
-  display: grid;
-  grid-template-areas:
-    'header header folder'
-    'arrow slogan slogan';
+	display: grid;
+	grid-template-areas: 'header header folder' 'arrow slogan slogan';
 }
 
 // Only left side of the header
 .header {
-  grid-area: header;
-  h2 {
-    font-weight: 300;
-    font-size: 2.188rem;
-    line-height: 6.25rem;
-    color: $dark-blue;
-  }
+	grid-area: header;
+	h2 {
+		font-weight: 300;
+		font-size: 2.188rem;
+		line-height: 6.25rem;
+		color: $dark-blue;
+	}
 
-  h1 {
-    font-weight: 700;
-    font-size: 3.75rem;
-    line-height: 5rem;
-    color: $dark-blue;
-  }
+	h1 {
+		font-weight: 700;
+		font-size: 3.75rem;
+		line-height: 5rem;
+		color: $dark-blue;
+	}
 
-  &__btn-container {
-    margin-top: 1.625rem;
-    &__primaryBtn {
-      width: 12.19rem;
-      font-weight: 500;
-      font-size: 1.25rem;
-      color: $off-white;
-      background-color: $accent;
-      border: 3px solid transparent;
-      border-radius: 0.313rem;
-      padding: 0.563rem 0;
-      cursor: pointer;
+	&__btn-container {
+		margin-top: 2rem;
+		&__primaryBtn {
+			width: 12.19rem;
+			font-weight: 500;
+			font-size: 1.25rem;
+			color: $off-white;
+			background-color: $accent;
+			border: 3px solid transparent;
+			border-radius: 0.313rem;
+			padding: 0.563rem 0;
+			cursor: pointer;
 
-      &:hover {
-        background: none;
-        color: $accent;
-        border: 3px solid $accent;
-      }
-    }
-    &__secondaryBtn {
-      margin-left: 2.5rem;
-      font-weight: 400;
-      font-size: 1.25rem;
-      color: $dark-blue;
-      background: none;
-      border: none;
-      cursor: pointer;
+			&:hover {
+				background: none;
+				color: $accent;
+				border: 3px solid $accent;
+			}
+		}
+		&__secondaryBtn {
+			margin-left: 2.5rem;
+			font-weight: 400;
+			font-size: 1.25rem;
+			color: $dark-blue;
+			background: none;
+			border: none;
+			cursor: pointer;
 
-      &:hover {
-        color: $accent;
-      }
-    }
-    &__btnIcon {
-      margin-right: 0.4rem;
-      margin-bottom: -0.25rem;
-      color: $dark-blue;
-      font-size: 1.5rem;
-    }
-  }
+			&:hover {
+				color: $accent;
+			}
+		}
+		&__btnIcon {
+			margin-right: 0.4rem;
+			margin-bottom: -0.25rem;
+			color: $dark-blue;
+			font-size: 1.5rem;
+		}
+	}
 }
 
 .folder-icon-container {
-  grid-area: folder;
-  margin-top: 2.375rem;
-  justify-self: flex-end;
+	grid-area: folder;
+	margin-top: 2.5vh;
+	justify-self: flex-end;
 }
 
 .arrow-icon-container {
-  grid-area: arrow;
-  align-self: flex-end;
-  margin-bottom: 0.75rem;
+	grid-area: arrow;
+	align-self: flex-end;
+	margin-bottom: 0.75rem;
 }
 
 .slogan-container {
-  grid-area: slogan;
-  align-self: flex-end;
-  &__text {
-    font-weight: 700;
-    font-size: 5.938rem;
-    line-height: 6.25rem;
-    color: $light-blue;
+	grid-area: slogan;
+	align-self: flex-end;
+	&__text {
+		font-weight: 700;
+		font-size: 5.938rem;
+		line-height: 6.25rem;
+		color: $light-blue;
+		opacity: 0.8;
 
-    text-align: end;
+		text-align: end;
 
-    &__accent {
-      color: $accent;
-    }
-  }
+		&__accent {
+			color: $accent;
+		}
+	}
 }
 
-// media query 950 - 1050 height
-@media screen and (min-height: 978px) and (max-height: 1050px) {
-  .header-container {
-    margin-top: 11rem;
-  }
+//for squeezed MAC and 1920px
+@media screen and (min-height: 881px) and (max-width: 1450px) {
+	.navbar {
+		margin: 0 10vw;
+	}
 
-  .accent__stick__left {
-    height: 49rem;
-  }
+	.accent__stick__left {
+		margin-left: 10vw;
+	}
 
-  .accent__stick__right {
-    height: 49rem;
-  }
+	.accent__stick__right {
+		margin-left: 90vw;
+	}
+
+	.container {
+		width: 70vw;
+	}
 }
 
-@media screen and (max-width: 1650px) {
-  .slogan-container {
-    &__text {
-      font-size: 5rem;
-      line-height: 5.5rem;
-    }
-  }
+//for super squeezed MAC and 1920px
+@media screen and (min-height: 881px) and (max-width: 1250px) {
+	.header-container {
+		grid-template-areas: ' header' 'slogan';
+	}
+
+	.folder-icon-container {
+		display: none;
+	}
+
+	.arrow-icon-container {
+		display: none;
+	}
+
+	.slogan-container {
+		&__text {
+			font-size: 5rem;
+			line-height: 6rem;
+		}
+	}
 }
 
-@media screen and (max-width: 1540px) {
-  .header-container {
-    grid-template-areas:
-      ' header'
-      'slogan';
-  }
+// for 1536px
+@media screen and (max-height: 880px) and (max-width: 1536px) {
+	.accent__stick__left {
+		border: 0.25rem solid $light-blue;
+		height: 75vh;
+	}
 
-  .folder-icon-container {
-    display: none;
-  }
+	.accent__stick__right {
+		border: 0.25rem solid #838b9d;
+		height: 75vh;
+	}
 
-  .arrow-icon-container {
-    display: none;
-  }
+	.navbar {
+		&__link {
+			font-size: 0.88rem;
+		}
+	}
+
+	.header {
+		h2 {
+			font-size: 1.8rem;
+			line-height: 4.5rem;
+		}
+
+		h1 {
+			font-size: 3rem;
+			line-height: 3.8rem;
+		}
+
+		&__btn-container {
+			margin-top: 1.2rem;
+			&__primaryBtn {
+				width: 10.5rem;
+				font-size: 1.1rem;
+				padding: 0.3rem 0;
+			}
+			&__secondaryBtn {
+				margin-left: 2.2rem;
+				font-size: 1.1rem;
+			}
+			&__btnIcon {
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	.folder-icon-container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-start;
+
+		img {
+			height: auto;
+			width: 19rem;
+		}
+	}
+
+	.arrow-icon-container {
+		margin-bottom: 0.5rem;
+
+		img {
+			width: 2.1rem;
+			height: auto;
+		}
+	}
+
+	.slogan-container {
+		&__text {
+			font-size: 4.8rem;
+			line-height: 5.2rem;
+		}
+	}
 }
 
-@media screen and (max-width: 1154px) {
-  .navbar__toggle {
-    color: $dark-blue;
-  }
+// for squeezed 1536px
+@media screen and (min-height: 730px) and (max-height: 880px) and (max-width: 1165px) {
+	.navbar {
+		margin: 0 10vw;
+	}
+
+	.accent__stick__left {
+		margin-left: 10vw;
+	}
+
+	.accent__stick__right {
+		margin-left: 90vw;
+	}
+
+	.container {
+		width: 70vw;
+	}
+
+	.folder-icon-container {
+		img {
+			width: 17rem;
+		}
+	}
+
+	.slogan-container {
+		&__text {
+			font-size: 4.5rem;
+			line-height: 5rem;
+		}
+	}
 }
 
-@media screen and (max-width: 1001px) {
-  .accent__stick__left {
-    display: none;
-  }
+// for 1366px
+@media screen and (max-height: 729px) and (max-width: 1366px) {
+	.header-container {
+		margin-top: 12vh;
+	}
 
-  .accent__stick__right {
-    display: none;
-  }
+	.header {
+		h2 {
+			font-size: 1.5rem;
+			line-height: 3.7rem;
+		}
 
-  .slogan-container {
-    &__text {
-      font-size: 7.9vw;
-      line-height: 7vw;
-    }
-  }
+		h1 {
+			font-size: 2.6rem;
+			line-height: 3.2rem;
+		}
+
+		&__btn-container {
+			&__primaryBtn {
+				width: 9.5rem;
+				font-size: 1rem;
+				padding: 0.25rem 0;
+			}
+			&__secondaryBtn {
+				margin-left: 1.7rem;
+				font-size: 1rem;
+			}
+			&__btnIcon {
+				font-size: 1.15rem;
+				margin-right: 0.2rem;
+			}
+		}
+	}
+
+	.folder-icon-container {
+		img {
+			height: auto;
+			width: 16.5rem;
+		}
+	}
+
+	.arrow-icon-container {
+		margin-bottom: 0.3rem;
+
+		img {
+			width: 1.9rem;
+			height: auto;
+		}
+	}
+
+	.slogan-container {
+		&__text {
+			font-size: 4.2rem;
+			line-height: 4.2rem;
+		}
+	}
 }
 
+// for 1229px
+@media screen and (max-height: 624px) and (max-width: 1229px) {
+	.header-container {
+		margin-top: 10vh;
+	}
 
-@media screen and (max-width: 568px) {
-  .navbar {
-    padding: 0;
-  }
+	.header {
+		h2 {
+			font-size: 1.3rem;
+			line-height: 3.4rem;
+		}
 
-   .mobileMenu {
-    display: block;
-    color: $off-white;
-    position: absolute;
-    top: 2vw;
-    right: 2.5vw;
-    font-size: 7.5vw;
-    z-index: 50;
+		h1 {
+			font-size: 2.2rem;
+			line-height: 2.8rem;
+		}
+	}
 
-    .toggle__icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 51;
-    }
-  }
+	.folder-icon-container {
+		img {
+			height: auto;
+			width: 14.5rem;
+		}
+	}
 
-  .navbar {
-    &__list {
-      display: none;
-    }
+	.arrow-icon-container {
+		margin-bottom: 0.2rem;
 
-    .mobile__menu__container {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(37, 46, 66, 0.8);
+		img {
+			width: 1.6rem;
+			height: auto;
+		}
+	}
 
-      .toggle__icon {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-      }
-    }
+	.slogan-container {
+		&__text {
+			font-size: 3.5rem;
+			line-height: 3.8rem;
+		}
+	}
+}
 
-    &__list__mobile {
-      width: 66%;
-      margin-left: auto;
-      list-style-type: none;
-      background-color: $text;
-      height: 100vh;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      gap: .5rem;
+// for all <1165px
+@media screen and (max-width: 1165px) {
+	.navbar {
+		margin: 0 10vw;
+	}
 
-      li {
-        a {
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
+	.accent__stick__left {
+		margin-left: 10vw;
+	}
 
-  .hero {
-    width: 100vw;
-    background: url('/assets/mobile/hero-bottom-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom right;
-    position: relative;
+	.accent__stick__right {
+		margin-left: 90vw;
+	}
 
-    .hero__top {
-      position: absolute;
-      width: 100vw;
-      height: 20vh;
-      background: url('/assets/mobile/hero-top-mobile.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: top right;
-    }
+	.container {
+		width: 70vw;
+	}
+}
 
-    .container {
-      width: 100vw;
-      padding: 2vw 4vw 4vw 4vw;
-    }
+// for all <950px
+@media screen and (max-width: 965px) {
+	.navbar {
+		&__link {
+			margin-left: 3.5vw;
+			font-size: 0.8rem;
+		}
+	}
 
-    .header-container {
-      margin-top: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+	.header-container {
+		grid-template-areas: ' header' 'slogan';
+	}
 
-      .header {
-        margin-top: 10vw;
-        text-align: start;
-        h2 {
-          font-size: 7vw;
-          line-height: 1.875rem;
-        }
+	.folder-icon-container {
+		display: none;
+	}
 
-        h1 {
-          font-size: 11.7vw;
-          line-height: 120%;
-        }
+	.arrow-icon-container {
+		display: none;
+	}
 
-        &__btn-container {
-          width: 100%;
-          &__primaryBtn {
-            font-size: 5vw;
-            width: 42vw;
-            padding: 1.3vw 0;
-          }
+	.slogan-container {
+		&__text {
+			font-size: 8.2vw;
+			line-height: 10vw;
+		}
+	}
+}
 
-          &__secondaryBtn {
-            font-size: 5vw;
-            display: inline-block;
-            margin-left: 5vw;
-          }
-        }
-       
-      }
-    }
-  }
+//for IPAD PRO
+@media screen and(min-height: 1080px) and (max-width: 1024px) {
+	.navbar {
+		margin: 0 3vw;
+		padding: 1.5vw 0;
 
-  .slogan-container {
-    align-self: center;
-    
-    &__text {
-      line-height: 125%;
-      text-align: center;
-      font-size: 11vw;
-    }
-  }
+		&__link {
+			margin-left: 4vw;
+			font-size: 1.2rem;
+		}
+	}
 
- 
+	.container {
+		width: 100vw;
+		padding: 0vw 3vw 11vw 3vw;
+	}
+
+	.hero {
+		width: 100vw;
+		background: url('/assets/tablet/hero-tablet.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+
+		.hero__top {
+			position: absolute;
+			width: 0vw;
+			height: 0vw;
+		}
+	}
+
+	.header-container {
+		margin-top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.header {
+		margin-top: 8rem;
+		text-align: start;
+		h2 {
+			font-size: 2.8rem;
+			line-height: 7rem;
+		}
+
+		h1 {
+			font-size: 4.8rem;
+			line-height: 120%;
+		}
+
+		&__btn-container {
+			width: 100%;
+			&__primaryBtn {
+				font-size: 1.4rem;
+				width: 14.5rem;
+				padding: 0.5rem 0;
+			}
+
+			&__secondaryBtn {
+				font-size: 1.4rem;
+				display: inline-block;
+				margin-left: 2.5rem;
+			}
+		}
+	}
+
+	.accent__stick__left {
+		display: none;
+	}
+
+	.accent__stick__right {
+		display: none;
+	}
+
+	.folder-icon-container {
+		display: none;
+	}
+
+	.arrow-icon-container {
+		display: none;
+	}
+
+	.slogan-container {
+		align-self: flex-end;
+
+		&__text {
+			line-height: 125%;
+			text-align: end;
+			font-size: 6.7rem;
+		}
+	}
+}
+
+//for IPAD
+@media screen and (min-height: 881px) and (max-width: 768px) {
+	.navbar {
+		margin: 0 3vw;
+		padding: 1.5vw 0;
+
+		&__link {
+			margin-left: 4vw;
+			font-size: 1rem;
+		}
+	}
+
+	.container {
+		width: 100vw;
+		padding: 0vw 3vw 11vw 3vw;
+	}
+
+	.hero {
+		width: 100vw;
+		background: url('/assets/tablet/hero-tablet.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+
+		.hero__top {
+			position: absolute;
+			width: 0vw;
+			height: 0vw;
+		}
+	}
+
+	.header-container {
+		margin-top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.header {
+		margin-top: 7rem;
+		text-align: start;
+		h2 {
+			font-size: 1.9rem;
+			line-height: 4rem;
+		}
+
+		h1 {
+			font-size: 3.5rem;
+			line-height: 120%;
+		}
+
+		&__btn-container {
+			width: 100%;
+			&__primaryBtn {
+				font-size: 1.2rem;
+				width: 11.7rem;
+				padding: 0.4rem 0;
+			}
+
+			&__secondaryBtn {
+				font-size: 1.2rem;
+				display: inline-block;
+				margin-left: 1.5rem;
+			}
+		}
+	}
+
+	.accent__stick__left {
+		display: none;
+	}
+
+	.accent__stick__right {
+		display: none;
+	}
+
+	.folder-icon-container {
+		display: none;
+	}
+
+	.arrow-icon-container {
+		display: none;
+	}
+
+	.slogan-container {
+		align-self: flex-end;
+
+		&__text {
+			line-height: 125%;
+			text-align: end;
+			font-size: 10.5vw;
+		}
+	}
+}
+
+// for PHONES
+@media screen and (min-height: 568px) and (max-width: 567px) {
+	.mobileMenu {
+		display: block;
+		color: $light-blue;
+		position: absolute;
+		font-size: 7.5vw;
+		z-index: 50;
+
+		.toggle__icon {
+			position: fixed;
+			top: 2vw;
+			right: 2.5vw;
+			z-index: 51;
+		}
+	}
+
+	.navbar {
+		padding: 0;
+		&__list {
+			display: none;
+		}
+
+		&__list__mobile {
+			width: 45%;
+			margin-left: auto;
+			list-style-type: none;
+			background-color: rgba(44, 55, 80, 1);
+			height: 100vh;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			gap: .5rem;
+			padding-left: 7vw;
+
+			li {
+				a {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+
+	.mobile__menu__container {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(108, 120, 146, 0.6);
+	}
+
+	.container {
+		width: 100vw;
+		padding: 0vw 4vw 4vw 4vw;
+	}
+
+	.hero {
+		width: 100vw;
+		background: url('/assets/mobile/hero-vertical-mobile.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+
+		.hero__top {
+			position: absolute;
+			width: 0vw;
+			height: 0vw;
+		}
+	}
+
+	.header-container {
+		margin-top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.header {
+		margin-top: 27vw;
+		text-align: start;
+		h2 {
+			font-size: 7vw;
+			line-height: 1.875rem;
+		}
+
+		h1 {
+			font-size: 11.7vw;
+			line-height: 120%;
+		}
+
+		&__btn-container {
+			width: 100%;
+			&__primaryBtn {
+				font-size: 4.3vw;
+				width: 42vw;
+				padding: 1.3vw 0;
+			}
+
+			&__secondaryBtn {
+				font-size: 4.3vw;
+				display: inline-block;
+				margin-left: 5vw;
+			}
+		}
+	}
+
+	.accent__stick__left {
+		display: none;
+	}
+
+	.accent__stick__right {
+		display: none;
+	}
+
+	.folder-icon-container {
+		display: none;
+	}
+
+	.arrow-icon-container {
+		display: none;
+	}
+
+	.slogan-container {
+		align-self: center;
+
+		&__text {
+			line-height: 125%;
+			text-align: center;
+			font-size: 11vw;
+		}
+	}
+}
+
+//for phones HORIZONTAL
+@media screen and (max-width: 812px) and (max-height: 567px) {
+	.navbar {
+		margin: 0 3vw;
+		padding: 1.5vw 0;
+
+		&__link {
+			margin-left: 3vw;
+		}
+	}
+
+	.hero {
+		width: 100vw;
+		background: url('/assets/mobile/hero-horizontal-mobile.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+
+		.hero__top {
+			position: absolute;
+			width: 0vw;
+			height: 0vw;
+		}
+	}
+
+	.container {
+		width: 100vw;
+		padding: 0 4vw;
+	}
+
+	.header {
+		text-align: start;
+	}
+
+	.accent__stick__left {
+		display: none;
+	}
+
+	.accent__stick__right {
+		display: none;
+	}
+
+	.folder-icon-container {
+		display: none;
+	}
+
+	.slogan-container {
+		display: none;
+	}
 }
