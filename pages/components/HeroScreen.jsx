@@ -19,15 +19,15 @@ const HeroScreen = () => {
               Full Stack <br /> Web Developer
             </h1>
             <div className={styles['header__btn-container']}>
-              <button className={styles['header__btn-container__primaryBtn']}>
+              <a href="#projects" className={styles['header__btn-container__primaryBtn']}>
                 My Projects
-              </button>
-              <button className={styles['header__btn-container__secondaryBtn']}>
+              </a>
+              <a href="#contact" className={styles['header__btn-container__secondaryBtn']}>
                 <BiLinkExternal
                   className={styles['header__btn-container__btnIcon']}
                 />
                 Contact Me
-              </button>
+              </a>
             </div>
           </div>
           <div className={styles['folder-icon-container']}>

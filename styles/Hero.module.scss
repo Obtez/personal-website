@@ -114,7 +114,9 @@
 	&__btn-container {
 		margin-top: 2rem;
 		&__primaryBtn {
+			display: inline-block;
 			width: 12.19rem;
+			text-align: center;
 			font-weight: 500;
 			font-size: 1.25rem;
 			color: $off-white;
@@ -123,6 +125,7 @@
 			border-radius: 0.313rem;
 			padding: 0.563rem 0;
 			cursor: pointer;
+			text-decoration: none;
 
 			&:hover {
 				background: none;
@@ -138,6 +141,7 @@
 			background: none;
 			border: none;
 			cursor: pointer;
+			text-decoration: none;
 
 			&:hover {
 				color: $accent;

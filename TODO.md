@@ -1,16 +1,17 @@
 # TODO
 
 ## JS
-[ ] fix hero button to scroll to the projects section
 [ ] change skills component naming to tech
 [ ] component for carousel
+[ ] next/image instead of img
 
 ## Navbar
 [ ] close mobile menu when clicking outside
 [ ] close mobile menu when clicking on a link
-[ ] 
 
 ## Hero
+[ ] projects button to scroll to the projects section
+[ ] contact button should scroll to contact section
 [ ] delete hero-top div and separated mobile background images
 
 ## ProjectsCard
