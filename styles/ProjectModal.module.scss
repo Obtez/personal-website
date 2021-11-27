@@ -168,6 +168,7 @@
 	grid-area: image;
 	position: relative;
 	height: fit-content;
+	width: fit-content;
 
 	.controlsOverlay {
 		position: absolute;
@@ -208,9 +209,12 @@
 	}
 
 	.projectImageCarousel {
+		width: 100%;
+
 		img {
 			width: 100%;
 			height: auto;
+			max-height: 74vh;
 			border-radius: 6px;
 			display: block;
 			margin-left: auto;
@@ -453,6 +457,12 @@
 			margin-left: 1.5rem;
 		}
 	}
+
+	.projectImageCarousel {
+		img {
+			max-height: 100%;
+		}
+	}
 }
 
 //for IPAD
@@ -516,6 +526,19 @@
 
 		.secondaryBtn {
 			margin-left: 1.5rem;
+		}
+	}
+
+	.projectImageCarousel {
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: auto;
+			max-height: 74vh;
+			border-radius: 6px;
+			display: block;
+			margin-left: auto;
 		}
 	}
 }
