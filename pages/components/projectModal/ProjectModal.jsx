@@ -18,15 +18,15 @@ const ProjectModal = ({ project, toggleModal }) => {
     setTouchPosition(e.touches[0].clientX)
   }
 
-  function handleTouchMove(e) {
-    const currentPosition = e.touches[0].clientX
-    const diff = touchPosition - currentPosition
-    if (diff > 0) {
-      handlePreviousImage()
-    } else {
-      handleNextImage()
+  function handleTouchEnd(e) {
+    const touchEndPosition = e.changedTouches[0].clientX
+    const touchDifference = touchEndPosition - touchPosition
+
+    if (touchDifference > 100) {
+      setActiveImage(activeImage - 1)
+    } else if (touchDifference < -100) {
+      setActiveImage(activeImage + 1)
     }
-    setTouchPosition(null)
   }
 
   function handleNextImage() {
@@ -89,7 +89,7 @@ const ProjectModal = ({ project, toggleModal }) => {
               src={project.image[activeImage]}
               alt={project.title}
               onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             />
             
           </div>
