@@ -6,7 +6,6 @@ import Navbar from './Navbar';
 const HeroScreen = () => {
   return (
     <div className={styles.hero}>
-      <div className={styles.hero__top}></div>
       <div className={styles.accent__stick__left} />
       <div className={styles.accent__stick__right} />
       <Navbar />
