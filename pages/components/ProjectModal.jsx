@@ -46,9 +46,9 @@ const ProjectModal = ({ project, toggleModal }) => {
           <p className={styles.projectTech}>{project.tech}</p>
           <div className={styles.projectSummary}>{ formatProjectDescription() }</div>
            <div className={styles.btnContainer}>
-            <a href="#" className={styles.primaryBtn}>Contact Me</a>
-            <a href="#" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
-            <a href="#" className={styles.secondaryBtn}><FaPlayCircle /> Demo</a>
+            <a href="#contact" className={styles.primaryBtn} onClick={() => toggleModal(null)}>Contact Me</a>
+            <a href={project.githubURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
+            <a href={project.demoURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><FaPlayCircle /> Demo</a>
           </div>
         </div>
         <div className={styles.projectImageContainer}>

@@ -15,6 +15,7 @@
 [ ] arrow-down should scroll to skills section
 [ ] delete hero-top div and separated mobile background images
 
+
 ## ProjectsCard
 [ ] open modal when clicking on card
 
