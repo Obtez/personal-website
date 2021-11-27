@@ -20,7 +20,7 @@ const ProjectCard = ({ project, toggleModal }) => {
 
       <div className={styles.btnContainer}>
       <button type="button" onClick={() => toggleModal(project)}>Details</button>
-      <a type="button"><BsGithub className={styles.githubIcon} /> GitHub</a>
+      <a href={project.githubURL} type="button" target="_blank" rel="noreferrer"><BsGithub className={styles.githubIcon} /> GitHub</a>
       </div>
     </div>
   )

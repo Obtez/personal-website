@@ -10,9 +10,9 @@
 [ ] close mobile menu when clicking on a link
 
 ## Hero
-[ ] projects button to scroll to the projects section
-[ ] contact button should scroll to contact section
-[ ] delete hero-top div and separated mobile background images
+[x] projects button to scroll to the projects section
+[x] contact button should scroll to contact section
+[x] delete hero-top div and separated mobile background images
 
 ## ProjectsCard
 [ ] open modal when clicking on card
