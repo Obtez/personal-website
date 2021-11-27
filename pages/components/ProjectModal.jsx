@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Image from "next/image"
 import { BsGithub } from 'react-icons/bs'
 import {IoCloseOutline} from 'react-icons/io5'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
@@ -66,7 +67,8 @@ const ProjectModal = ({ project, toggleModal }) => {
             )
           }
           <div className={styles.projectImageCarousel}>
-            <img src={project.image[activeImage]} alt={project.title} />
+            {/* <img src={project.image[activeImage]} alt={project.title} /> */}
+            <Image src={project.image[activeImage]} alt={project.title} className={styles.projectImage} />
             
           </div>
           
