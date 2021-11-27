@@ -15,10 +15,14 @@ const ProjectModal = ({ project, toggleModal }) => {
   }
 
   function handleTouchStart(e) {
+    if (project.image.length <= 1) return
+
     setTouchPosition(e.touches[0].clientX)
   }
 
   function handleTouchEnd(e) {
+    if (project.image.length <= 1) return
+
     const touchEndPosition = e.changedTouches[0].clientX
     const touchDifference = touchEndPosition - touchPosition
 
