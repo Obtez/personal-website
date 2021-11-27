@@ -88,6 +88,9 @@
 	}
 
 	.submitBtn {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
 		display: inline-block;
 		width: 8rem;
 		font-size: 1.2rem;
@@ -157,9 +160,6 @@
 		}
 
 		.submitBtn {
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
 			width: 7.5rem;
 			font-size: 1.1rem;
 			padding: .2rem 0;
