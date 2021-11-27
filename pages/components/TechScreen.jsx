@@ -53,7 +53,7 @@ const TechScreen = () => {
 
 
   return (
-    <section id="skills" className={styles.container}>
+    <section id="tech" className={styles.container}>
       <h2>.tech</h2>
       <div className={styles.row}>
       <img className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" />

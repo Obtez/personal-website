@@ -1,8 +1,10 @@
+import { smoothScroll } from './_helper';
 import { HiMenu } from 'react-icons/hi';
-import styles from '../../../styles/Hero.module.scss';
 import DesktopNavbar from './DesktopNavbar';
+import styles from '../../../styles/Hero.module.scss';
 
-const MobileNavbar = ({showMobileMenu, showMenuToggle, toggleMenu}) => {
+const MobileNavbar = ({ showMobileMenu, showMenuToggle, toggleMenu }) => {
+  
   return (
     <div className={styles.mobileMenu}>
        {
@@ -14,37 +16,53 @@ const MobileNavbar = ({showMobileMenu, showMenuToggle, toggleMenu}) => {
           <ul className={styles.navbar__list__mobile} onClick={(e) => {e.stopPropagation()}}>
             <li>
               <a
-                href="#"
+                href="#hero"
                 className={styles.navbar__link}
-                onClick={toggleMenu}>.home</a>
+                  onClick={(e) => {
+                    smoothScroll(e);
+                    toggleMenu();
+                }}>.home</a>
             </li>
 
             <li>
               <a
-                href="#skills"
+                href="#tech"
                 className={styles.navbar__link}
-                onClick={toggleMenu}>.tech</a>
+                  onClick={(e) => {
+                    smoothScroll(e);
+                    toggleMenu();
+                }}>.tech</a>
             </li>
       
             <li>
               <a
                 href="#projects"
                 className={styles.navbar__link}
-              onClick={toggleMenu}>.projects</a>
+                  onClick={(e) => {
+                    smoothScroll(e);
+                    toggleMenu()
+              }}>.projects</a>
             </li>
       
             <li>
               <a
                 href="#about"
                 className={styles.navbar__link}
-                onClick={toggleMenu}>.about me</a>
+                  onClick={(e) => {
+                    smoothScroll(e);
+                    toggleMenu();
+                  }
+                }>.about me</a>
             </li>
 
             <li>
               <a
                 href="#contact"
                 className={styles.navbar__link}
-                onClick={toggleMenu}>.contact</a>
+                  onClick={(e) => {
+                    smoothScroll(e)
+                    toggleMenu()
+                }}>.contact</a>
             </li>
           </ul>
         </div>
