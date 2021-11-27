@@ -6,7 +6,7 @@ import Navbar from "./navbar/Navbar"
 
 const HeroScreen = ({showMenuToggle}) => {
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} id="hero">
       <div className={styles.accent__stick__left} />
       <div className={styles.accent__stick__right} />
       <Navbar showMenuToggle={ showMenuToggle } />
