@@ -57,9 +57,9 @@ const TechScreen = () => {
       <h2>.tech</h2>
       <div className={styles.row}>
       <img className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" />
-      <ul className={styles.skillItemContainer}>
+      <ul className={styles.techItemContainer}>
           {
-            techList.map(skill => <TechItem key={skill.text} skill={skill} />)
+            techList.map(tech => <TechItem key={tech.text} tech={tech} />)
           }
           </ul>
       <img className={styles.bracket} src="/assets/skills-icons/right_bracket.svg" alt="bracket"/>

@@ -1,16 +1,16 @@
 import Image from "next/image"
 import styles from "../../styles/Tech.module.scss";
 
-const TechItem = ({ skill }) => {
+const TechItem = ({ tech }) => {
   
-  if (!skill) {
+  if (!tech) {
     return null;
   }
 
   return (
-    <li className={styles.skillItem}>
-        <Image src={`/assets/skills-icons/${skill.url}_icon.svg`} alt={skill.text} width={100} height={100} />
-      <p>{skill.text}</p>
+    <li className={styles.techItem}>
+        <Image src={`/assets/skills-icons/${tech.url}_icon.svg`} alt={tech.text} width={100} height={100} />
+      <p>{tech.text}</p>
     </li>
   )
 }
