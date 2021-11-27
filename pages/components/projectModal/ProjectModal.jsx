@@ -46,6 +46,8 @@ const ProjectModal = ({ project, toggleModal }) => {
         <div className={styles.descriptionContainer}>
           
           <ProjectHeader project={project} />
+
+           <p className={styles.projectTech}>{project.tech}</p>
        
           <div className={styles.projectSummary}>{ formatProjectDescription() }</div>
           
