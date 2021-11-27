@@ -530,7 +530,9 @@
 	}
 
 	.projectImageCarousel {
-		width: 100%;
+		border: 2px solid red;
+		left: 0;
+		right: 0;
 
 		img {
 			width: 100%;
