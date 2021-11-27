@@ -75,29 +75,31 @@ const ProjectModal = ({ project, toggleModal }) => {
             <a href={project.githubURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
           </div>
         </div>
-        <div className={styles.projectImageContainer}>
-          {
-            project.image.length > 1 && (
-             <div className={styles.controlsOverlay}>
-              <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
-                <BsChevronLeft className={styles.arrowLeft} />
+        <div className={styles.imageArea}>
+          <div className={styles.projectImageContainer}>
+            {
+              project.image.length > 1 && (
+               <div className={styles.controlsOverlay}>
+                <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
+                  <BsChevronLeft className={styles.arrowLeft} />
+                </div>
+              <div className={styles.arrowRightContainer} onClick={handleNextImage}>
+                  <BsChevronRight className={styles.arrowRight} />
               </div>
-            <div className={styles.arrowRightContainer} onClick={handleNextImage}>
-                <BsChevronRight className={styles.arrowRight} />
-            </div>
-            </div>
-            )
-          }
-          <div className={styles.projectImageCarousel}>
-            <img
-              src={project.image[activeImage]}
-              alt={project.title}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            />
-            
-          </div>
+              </div>
+              )
+            }
+            <div className={styles.projectImageCarousel}>
+              <img
+                src={project.image[activeImage]}
+                alt={project.title}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              />
           
+            </div>
+          
+          </div>
         </div>
         <div className={styles.buffer}/>
         <div className={styles.controls}>
