@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import MobileNavbar from './MobileNavbar';
 import styles from '../../../styles/Hero.module.scss';
+import DesktopNavbar from './DesktopNavbar';
 
 const Navbar = ({ showMenuToggle }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -16,6 +17,7 @@ const Navbar = ({ showMenuToggle }) => {
         showMenuToggle={showMenuToggle}
         toggleMenu={toggleMenu}
       />
+      <DesktopNavbar />
     </nav>
   )
 }

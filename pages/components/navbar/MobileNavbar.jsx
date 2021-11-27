@@ -1,5 +1,6 @@
 import { HiMenu } from 'react-icons/hi';
 import styles from '../../../styles/Hero.module.scss';
+import DesktopNavbar from './DesktopNavbar';
 
 const MobileNavbar = ({showMobileMenu, showMenuToggle, toggleMenu}) => {
   return (
@@ -49,6 +50,8 @@ const MobileNavbar = ({showMobileMenu, showMenuToggle, toggleMenu}) => {
         </div>
         )
       }
+
+      <DesktopNavbar />
        
     </div>
   )
