@@ -1,4 +1,4 @@
-import { smoothScroll } from './_helper';
+import { smoothScroll } from '../../../helpers/_navHelpers';
 import { HiMenu } from 'react-icons/hi';
 import DesktopNavbar from './DesktopNavbar';
 import styles from '../../../styles/Hero.module.scss';
