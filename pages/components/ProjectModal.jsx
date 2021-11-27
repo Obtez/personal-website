@@ -72,15 +72,17 @@ const ProjectModal = ({ project, toggleModal }) => {
         </div>
         <div className={styles.buffer}/>
         <div className={styles.controls}>
-          {
+          { project.image.length > 1 && (
             project.image.map((image, index) => {
               return (
-                <div key={index} className={index === activeImage ? styles.active : null}>
-                  
-                </div>
+                <div
+                  key={index}
+                  className={index === activeImage ? styles.active : null}
+                  onClick={() => setActiveImage(index)}
+                />
               )
             })
-          }
+          )}
         </div>
       </div>
      
