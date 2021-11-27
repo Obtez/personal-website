@@ -30,6 +30,8 @@ const WhyMe = () => {
         </div>
       </div>
 
+      {/* SVG for desktop, PNG for mobile */}
+      <img className={styles.waveMobile} src="/assets/Waves.png" />
       <img className={styles.wave} src="/assets/Waves.svg" />
 
     </section>

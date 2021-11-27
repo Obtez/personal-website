@@ -56,6 +56,10 @@
 	width: 100vw;
 }
 
+.waveMobile {
+	display: none;
+}
+
 //for squeezed MAC and 1920px
 @media screen and (min-height: 881px) and (max-width: 1450px) {
 	.row {
@@ -140,8 +144,14 @@
 	}
 
 	.wave {
+		display: none;
 		margin-top: 4.5rem;
-		// width: 100%;
+		width: 100vw;
+	}
+
+	.waveMobile {
+		display: inline-block;
+		margin-top: 4.5rem;
 		width: 100vw;
 	}
 }
@@ -181,6 +191,13 @@
 	}
 
 	.wave {
+		display: none;
+		margin-top: 5rem;
+		width: 100vw;
+	}
+
+	.waveMobile {
+		display: inline-block;
 		margin-top: 5rem;
 		width: 100vw;
 	}
@@ -229,7 +246,14 @@
 	}
 
 	.wave {
+		display: none;
+		margin-bottom: .4rem;
+		margin-top: 6vh;
 		width: 100vw;
+	}
+
+	.waveMobile {
+		display: inline-block;
 		margin-bottom: .4rem;
 		margin-top: 6vh;
 		width: 100vw;
