@@ -1,9 +1,16 @@
- export function smoothScroll(e) {
+ export function smoothScroll(e, target = null) {
    e.preventDefault()
-  const section = e.target.getAttribute('href')
 
-  const element = document.querySelector(section)
-  element.scrollIntoView({
+   let element;
+
+   if (target !== null) {
+      element = document.querySelector(target)
+   } else {
+    const section = e.target.getAttribute('href')
+    element = document.querySelector(section)
+   }
+
+   element.scrollIntoView({
     behavior: 'smooth',
   })
 }

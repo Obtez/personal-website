@@ -2,16 +2,31 @@ import { useState } from 'react';
 import { BsGithub } from 'react-icons/bs'
 import {IoCloseOutline} from 'react-icons/io5'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
-import {FaPlayCircle} from 'react-icons/fa'
 import styles from "../../../styles/ProjectModal.module.scss"
 import ProjectHeader from './ProjectHeader';
 
 
 const ProjectModal = ({ project, toggleModal }) => {
   const [activeImage, setActiveImage] = useState(0)
+  const [touchPosition, setTouchPosition] = useState(null)
 
   if (!project) {
     return null;
+  }
+
+  function handleTouchStart(e) {
+    setTouchPosition(e.touches[0].clientX)
+  }
+
+  function handleTouchMove(e) {
+    const currentPosition = e.touches[0].clientX
+    const diff = touchPosition - currentPosition
+    if (diff > 0) {
+      handlePreviousImage()
+    } else {
+      handleNextImage()
+    }
+    setTouchPosition(null)
   }
 
   function handleNextImage() {
@@ -70,7 +85,12 @@ const ProjectModal = ({ project, toggleModal }) => {
             )
           }
           <div className={styles.projectImageCarousel}>
-            <img src={project.image[activeImage]} alt={project.title} />
+            <img
+              src={project.image[activeImage]}
+              alt={project.title}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+            />
             
           </div>
           

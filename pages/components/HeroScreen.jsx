@@ -1,4 +1,5 @@
 import { BiLinkExternal } from 'react-icons/bi';
+import { smoothScroll } from '../../helpers/_navHelpers';
 
 import styles from '../../styles/Hero.module.scss';
 // import Navbar from './Navbar';
@@ -34,7 +35,7 @@ const HeroScreen = ({showMenuToggle}) => {
             <img src='./assets/Folder Icon.svg' />
           </div>
           <div className={styles['arrow-icon-container']}>
-            <img src='./assets/Group 33.svg' />
+            <img src='./assets/Group 33.svg' onClick={(e) => smoothScroll(e, "#tech")} />
           </div>
           <div className={styles['slogan-container']}>
             <p className={styles['slogan-container__text']}>
@@ -43,7 +44,7 @@ const HeroScreen = ({showMenuToggle}) => {
                 YOU
               </span>
             </p>
-            <img src='./assets/mobile/arrow-down-mobile.svg' />
+            <img src='./assets/mobile/arrow-down-mobile.svg' onClick={(e) => smoothScroll(e, "#tech")} />
           </div>
         </div>
       </div>
