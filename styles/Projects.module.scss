@@ -30,8 +30,12 @@
 	display: flex;
 	flex-direction: column;
 	margin: 0.8rem 0;
-
 	transition: all .2s ease-in-out;
+
+	&:hover {
+		transform: scale(1.12);
+	}
+
 	img {
 		border-radius: 5px;
 		width: 100%;
@@ -95,14 +99,6 @@
 				margin-right: .25rem;
 			}
 		}
-	}
-
-	// ===============================
-	// CARD HOVER
-	// ===============================
-
-	&:hover {
-		transform: scale(1.12);
 	}
 }
 
@@ -311,6 +307,10 @@
 	.projectCard {
 		padding: 1.2rem;
 		flex-basis: 20rem;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 }
 
@@ -339,7 +339,7 @@
 		margin: 0;
 
 		&:hover {
-			transform: scale(1.12);
+			transform: scale(1.05);
 		}
 	}
 }
@@ -369,7 +369,7 @@
 		margin: 0;
 
 		&:hover {
-			transform: scale(1.12);
+			transform: scale(1.05);
 		}
 	}
 }
@@ -406,6 +406,10 @@
 
 	.projectCard {
 		margin: 0.5rem 0;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 }
 

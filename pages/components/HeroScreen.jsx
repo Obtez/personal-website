@@ -43,6 +43,7 @@ const HeroScreen = () => {
                 YOU
               </span>
             </p>
+            <img src='./assets/mobile/arrow-down-mobile.svg' />
           </div>
         </div>
       </div>
