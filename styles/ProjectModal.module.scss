@@ -19,9 +19,11 @@
 	position: relative;
 	border-radius: 6px;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
-	gap: 0 1.5rem;
-	width: 75vw;
+	grid-template-areas: 'description image image image' 'description image image image'
+		'buffer controls controls controls';
+	grid-template-rows: 1fr;
+	width: 85vw;
+	max-height: 90vh;
 	padding: 2.2rem 2.2rem 0.5rem 2.2rem;
 
 	.closeBtn {
@@ -40,6 +42,7 @@
 	}
 
 	.controls {
+		grid-area: controls;
 		padding: .5rem;
 		display: flex;
 		flex-flow: row nowrap;
@@ -66,35 +69,46 @@
 
 .descriptionContainer {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-direction: column;
+	align-items: space-between;
+	grid-area: description;
 
 	.projectTitle {
 		font-size: 1.7rem;
 		font-weight: 700;
 		color: $dark-blue;
+		margin-right: 1.5rem;
 	}
 	.projectTech {
 		margin-top: 1rem;
 		font-weight: 300;
 		color: $medium-blue;
 		font-size: 1.2rem;
+		margin-right: 1.5rem;
 	}
 	.projectSummary {
-		margin-top: 1rem;
-		line-height: 200%;
+		line-height: 160%;
 		color: $dark-blue;
 		flex-grow: 1;
 		overflow-y: auto;
+		margin-right: 1.5rem;
+
+		p {
+			margin-top: 1rem;
+		}
 	}
+}
+
+.buffer {
+	grid-area: buffer;
 }
 
 .btnContainer {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
 	align-items: center;
 	margin-top: 1.5rem;
-	width: 90%;
+	width: 100%;
 
 	a {
 		text-decoration: none;
@@ -125,6 +139,7 @@
 		font-size: 1.1rem;
 		color: $medium-blue;
 		font-weight: 300;
+		margin-left: 1vw;
 
 		&:hover {
 			color: $accent;
@@ -133,7 +148,9 @@
 }
 
 .projectImageContainer {
+	grid-area: image;
 	position: relative;
+	height: fit-content;
 
 	.controlsOverlay {
 		position: absolute;
@@ -184,28 +201,41 @@
 	}
 }
 
-//for 1920px
-@media screen and (min-height: 881px) and (min-width: 1800px) {
-	.btnContainer {
-		margin-right: 3rem;
+//for squeezed MAC and 1920px
+@media screen and (min-height: 881px) and (max-width: 1547px) {
+	.projectModal {
+		width: 95vw;
 	}
 }
 
-//for squeezed MAC and 1920px
-@media screen and (min-height: 881px) and (max-width: 1620px) {
-	.btnContainer {
-		width: 10.8rem;
-
-		.secondaryBtn {
-			margin-top: 0.5rem;
+//for squeezed MAC and 1920px <1396px
+@media screen and (min-height: 881px) and (max-width: 1395px) {
+	.descriptionContainer {
+		.projectTitle {
+			margin-right: 0.5rem;
 		}
+		.projectTech {
+			margin-right: 0.5rem;
+		}
+		.projectSummary {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+//for squeezed MAC and 1920px <1320px
+@media screen and (min-height: 881px) and (max-width: 1320px) {
+	.projectModal {
+		width: 100vw;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 }
 
 // for 1536px
 @media screen and (max-height: 880px) and (max-width: 1536px) {
 	.projectModal {
-		padding: 2.3rem 2.3rem 0.7rem 2.3rem;
+		padding: 2rem 2rem 0.4rem 2rem;
 
 		.closeBtn {
 			top: 0.5rem;
@@ -234,7 +264,7 @@
 		}
 		.projectSummary {
 			margin-top: 0.7rem;
-			line-height: 180%;
+			line-height: 150%;
 		}
 	}
 
@@ -255,21 +285,47 @@
 }
 
 // for squeezed 1536px
-@media screen and (max-height: 880px) and (max-width: 1370px) {
-	.btnContainer {
-		width: 9.6rem;
+@media screen and (max-height: 880px) and (max-width: 1510px) {
+	// .btnContainer {
+	// 	width: 9.6rem;
 
-		.secondaryBtn {
-			margin-top: 0.3rem;
-		}
+	// 	.secondaryBtn {
+	// 		margin-top: 0.3rem;
+	// 	}
+	// }
+	.projectModal {
+		width: 90vw;
+	}
+}
+
+// for squeezed 1536px
+@media screen and (max-height: 880px) and (max-width: 1422px) {
+	.projectModal {
+		width: 95vw;
+	}
+}
+
+// for squeezed 1536px
+@media screen and (max-height: 880px) and (max-width: 1296px) {
+	.projectModal {
+		width: 100vw;
+		padding: 2rem 1rem 0.4rem 1rem;
+	}
+}
+
+// for squeezed 1536px
+@media screen and (max-height: 880px) and (max-width: 1230px) {
+	.projectModal {
+		height: 95%;
 	}
 }
 
 // for 1366px
-@media screen and (max-width: 1366px) {
+@media screen and (max-height: 720px) and (max-width: 1366px) {
 	.projectModal {
 		padding: 1.2rem 1.2rem 0rem 1.2rem;
 		width: 85vw;
+		max-height: 95vh;
 
 		.closeBtn {
 			top: 0rem;
@@ -299,7 +355,7 @@
 		.projectSummary {
 			margin-top: 0.4rem;
 			line-height: 170%;
-			font-size: 1rem;
+			font-size: 0.9rem;
 		}
 	}
 
@@ -318,107 +374,36 @@
 	}
 }
 
-// for squeezed 1366px
-@media screen and (max-width: 1232px) {
-	.btnContainer {
-		width: 8.6rem;
-	}
-}
-
-// for all <1000px
-@media screen and (max-width: 1000px) {
-	.projectModal {
-		width: 95vw;
-	}
-}
-
-// for all < 770
-@media screen and (max-width: 770px) {
-	.projectModal {
-		display: flex;
-		flex-direction: column-reverse;
-		overflow-y: scroll;
-		overflow-x: hidden;
-		padding: 1.5rem;
-		width: 70vw;
-
-		.closeBtn {
-			top: 0.2rem;
-			right: 0rem;
-			font-size: 1.8rem;
-			z-index: 10;
-		}
-
-		.buffer {
-			display: none;
-		}
-
-		.controls {
-			display: none;
-		}
-	}
-
-	.descriptionContainer {
-		display: flex;
-		justify-content: space-between;
-		flex-grow: 1;
-
-		.projectTitle {
-			margin-top: 0.8rem;
-			font-size: 1.5rem;
-		}
-		.projectTech {
-			margin-top: 0.8rem;
-			font-size: 1rem;
-		}
-		.projectSummary {
-			margin-top: 0.7rem;
-			line-height: 190%;
-		}
-	}
-
-	.btnContainer {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: flex-start;
-		align-items: center;
-		width: 100%;
-
-		.secondaryBtn {
-			margin-left: .5rem;
-		}
-	}
-}
-
-//for IPAD PRO
-@media screen and(min-height: 1080px) and (max-width: 1024px) {
-	.projectModal {
-		width: 92vw;
-	}
-}
+// //for IPAD PRO
+// @media screen and(min-height: 1080px) and (max-width: 1024px) {
+// 	.projectModal {
+// 		width: 92vw;
+// 	}
+// }
 
 //for IPAD
-@media screen and (min-height: 900px) and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
 	.projectModal {
-		display: flex;
-		flex-direction: column-reverse;
+		display: grid;
+		grid-template-areas: ' image' 'controls' 'description';
 		overflow-y: scroll;
 		overflow-x: hidden;
-		padding: 1.5rem;
+		padding: 1.7rem;
 		width: 92vw;
+		max-height: 94vh;
 
 		.closeBtn {
-			top: 0.2rem;
-			right: 0rem;
-			font-size: 1.8rem;
+			position: fixed;
+			top: 8.5vh;
+			right: 6.5vh;
+			font-size: 3vw;
+			border-radius: 50%;
+			background-color: #1c2333;
+			color: $off-white;
 			z-index: 10;
 		}
 
 		.buffer {
-			display: none;
-		}
-
-		.controls {
 			display: none;
 		}
 	}
@@ -450,7 +435,7 @@
 		width: 100%;
 
 		.secondaryBtn {
-			margin-left: .5rem;
+			margin-left: 1.5rem;
 		}
 	}
 }
@@ -461,18 +446,22 @@
 		top: 12vw;
 		bottom: 12vw;
 		position: fixed;
-		display: flex;
+		display: grid;
+		grid-template-areas: ' image' 'controls' 'description';
 		width: 92vw;
 		height: auto;
-		flex-direction: column-reverse;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		padding: 6.5vw 4vw 5vw 4vw;
 
 		.closeBtn {
-			top: -0.1rem;
-			right: 0rem;
-			font-size: 1.8rem;
+			position: fixed;
+			top: 8.5vw;
+			right: 6.5vw;
+			font-size: 7vw;
+			border-radius: 50%;
+			background-color: #1c2333;
+			color: $off-white;
 			z-index: 10;
 		}
 
@@ -481,7 +470,10 @@
 		}
 
 		.controls {
-			display: none;
+			div {
+				width: 2.5vw;
+				height: 2.5vw;
+			}
 		}
 	}
 
@@ -546,10 +538,10 @@
 		top: 2vh;
 		bottom: 2vh;
 		position: fixed;
-		display: flex;
+		display: grid;
+		grid-template-areas: ' image' 'controls' 'description';
 		width: 76vw;
 		height: auto;
-		flex-direction: column-reverse;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		padding: 6.5vh 4vh 5vh 4vh;
@@ -566,7 +558,10 @@
 		}
 
 		.controls {
-			display: none;
+			div {
+				width: 2.5vh;
+				height: 2.5vw h;
+			}
 		}
 	}
 

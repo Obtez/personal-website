@@ -49,8 +49,8 @@
 	padding: 1rem 0;
 	display: flex;
 	justify-content: flex-end;
+
 	&__list {
-		// border:1px solid red;
 		display: flex;
 		list-style-type: none;
 		font-weight: 300;
@@ -167,13 +167,17 @@
 .slogan-container {
 	grid-area: slogan;
 	align-self: flex-end;
+
+	img {
+		display: none;
+	}
+
 	&__text {
 		font-weight: 700;
 		font-size: 5.938rem;
 		line-height: 6.25rem;
 		color: $light-blue;
 		opacity: 0.8;
-
 		text-align: end;
 
 		&__accent {
@@ -789,12 +793,22 @@
 	}
 
 	.slogan-container {
-		align-self: center;
+		display: flex;
+		flex-direction: column;
+		align-self: flex-end;
+		align-items: center;
+
+		img {
+			display: flex;
+			width: 8vw;
+			height: auto;
+		}
 
 		&__text {
-			line-height: 125%;
-			text-align: center;
-			font-size: 11vw;
+			line-height: 100%;
+			text-align: end;
+			font-size: 10.85vw;
+			margin-bottom: 8vw;
 		}
 	}
 }

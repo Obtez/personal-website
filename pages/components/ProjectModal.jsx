@@ -28,6 +28,15 @@ const ProjectModal = ({ project, toggleModal }) => {
     }
   }
 
+  function formatProjectDescription () {
+    if (project.description.includes("\n")) {
+      const splitDescription = project.description.split("\n")
+      return splitDescription.map(line => <p key={line}>{line}</p>)
+    } else {
+      return project.description
+    }
+  }
+
   return (
     <div className={styles.modalContainer} onClick={() => toggleModal(null)}>
       <div className={styles.projectModal} onClick={(e) => {e.stopPropagation()}}>
@@ -35,7 +44,7 @@ const ProjectModal = ({ project, toggleModal }) => {
         <div className={styles.descriptionContainer}>
           <h3 className={styles.projectTitle}>{project.title}</h3>
           <p className={styles.projectTech}>{project.tech}</p>
-          <p className={styles.projectSummary}>{ project.description }</p>
+          <div className={styles.projectSummary}>{ formatProjectDescription() }</div>
            <div className={styles.btnContainer}>
             <a href="#" className={styles.primaryBtn}>Contact Me</a>
             <a href="#" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
