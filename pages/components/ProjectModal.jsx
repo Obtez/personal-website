@@ -43,12 +43,13 @@ const ProjectModal = ({ project, toggleModal }) => {
         <IoCloseOutline className={styles.closeBtn} onClick={() => toggleModal(null)}/>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.projectTitle}>{project.title}</h3>
+          <a href={project.demoURL} target="_blank" rel="noreferrer" className={`${styles.secondaryBtn} ${styles.demoBtn} ${styles.demoBtnMobile}`}><FaPlayCircle /> Demo</a>
           <p className={styles.projectTech}>{project.tech}</p>
           <div className={styles.projectSummary}>{ formatProjectDescription() }</div>
            <div className={styles.btnContainer}>
             <a href="#contact" className={styles.primaryBtn} onClick={() => toggleModal(null)}>Contact Me</a>
             <a href={project.githubURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><BsGithub /> GitHub</a>
-            <a href={project.demoURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><FaPlayCircle /> Demo</a>
+            <a href={project.demoURL} target="_blank" rel="noreferrer" className={`${styles.secondaryBtn} ${styles.demoBtn} ${styles.demoBtnDesktop}`}><FaPlayCircle /> Demo</a>
           </div>
         </div>
         <div className={styles.projectImageContainer}>
