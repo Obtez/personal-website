@@ -2,7 +2,7 @@ import Head from 'next/head';
 import About from './components/About';
 import HeroScreen from './components/HeroScreen';
 import ProjectsScreen from './components/ProjectsScreen';
-import SkillsScreen from './components/SkillsScreen';
+import TechScreen from './components/TechScreen';
 import WhyMe from './components/WhyMe';
 import styles from '../styles/Home.module.scss';
 import Contact from './components/Contact';
@@ -19,7 +19,7 @@ export default function Home() {
 
       <main>
         <HeroScreen />
-          <SkillsScreen />
+          <TechScreen />
         <ProjectsScreen />
         <About />
         <WhyMe />

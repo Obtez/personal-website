@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from "../../styles/Skills.module.scss";
-import SkillsItem from './SkillsItem';
+import styles from "../../styles/Tech.module.scss";
+import TechItem from './TechItem';
 
-const skillsList = [
+const techList = [
   {
     url: "html",
     text: "HTML"
@@ -49,7 +49,7 @@ const skillsList = [
   }
 ]
 
-const SkillsScreen = () => {
+const TechScreen = () => {
 
 
   return (
@@ -57,9 +57,9 @@ const SkillsScreen = () => {
       <h2>.tech</h2>
       <div className={styles.row}>
       <img className={styles.bracket} src="/assets/skills-icons/left_bracket.svg" alt="bracket" />
-      <ul className={styles.skillItemContainer}>
+      <ul className={styles.techItemContainer}>
           {
-            skillsList.map(skill => <SkillsItem key={skill.text} skill={skill} />)
+            techList.map(tech => <TechItem key={tech.text} tech={tech} />)
           }
           </ul>
       <img className={styles.bracket} src="/assets/skills-icons/right_bracket.svg" alt="bracket"/>
@@ -68,4 +68,4 @@ const SkillsScreen = () => {
   );
 };
 
-export default SkillsScreen;
+export default TechScreen;

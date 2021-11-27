@@ -23,7 +23,7 @@
 	}
 }
 
-.skillItemContainer {
+.techItemContainer {
 	width: 100%;
 	display: flex;
 	flex-flow: row nowrap;
@@ -32,7 +32,7 @@
 	margin-top: 0.5rem;
 }
 
-.skillItem {
+.techItem {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -74,7 +74,7 @@
 		margin-top: 1rem;
 	}
 
-	.skillItem {
+	.techItem {
 		img {
 			height: 1.7rem;
 		}
@@ -100,7 +100,7 @@
 		margin-top: 0.3rem;
 	}
 
-	.skillItem {
+	.techItem {
 		img {
 			height: 1.5rem;
 		}
@@ -152,7 +152,7 @@
 		margin-top: 1.5rem;
 	}
 
-	.skillItem {
+	.techItem {
 		img {
 			width: auto;
 			height: 3.8vw;
@@ -175,7 +175,7 @@
 
 //for all <800px
 @media screen and (max-width: 800px) {
-	.skillItem {
+	.techItem {
 		p {
 			font-size: 0.9rem;
 		}
@@ -211,7 +211,7 @@
 		}
 	}
 
-	.skillItemContainer {
+	.techItemContainer {
 		width: 100%;
 		display: grid;
 		justify-content: center;
@@ -229,7 +229,7 @@
 		}
 	}
 
-	.skillItem {
+	.techItem {
 		p {
 			font-size: 0.86rem;
 		}
