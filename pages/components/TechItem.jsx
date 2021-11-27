@@ -1,7 +1,7 @@
 import Image from "next/image"
-import styles from "../../styles/Skills.module.scss";
+import styles from "../../styles/Tech.module.scss";
 
-const SkillsItem = ({ skill }) => {
+const TechItem = ({ skill }) => {
   
   if (!skill) {
     return null;
@@ -15,4 +15,4 @@ const SkillsItem = ({ skill }) => {
   )
 }
 
-export default SkillsItem
+export default TechItem
