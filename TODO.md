@@ -12,6 +12,7 @@
 ## Hero
 [ ] projects button to scroll to the projects section
 [ ] contact button should scroll to contact section
+[ ] arrow-down should scroll to skills section
 [ ] delete hero-top div and separated mobile background images
 
 ## ProjectsCard
