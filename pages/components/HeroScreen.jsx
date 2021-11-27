@@ -3,12 +3,12 @@ import { BiLinkExternal } from 'react-icons/bi';
 import styles from '../../styles/Hero.module.scss';
 import Navbar from './Navbar';
 
-const HeroScreen = () => {
+const HeroScreen = ({showMenuToggle}) => {
   return (
     <div className={styles.hero}>
       <div className={styles.accent__stick__left} />
       <div className={styles.accent__stick__right} />
-      <Navbar />
+      <Navbar showMenuToggle={ showMenuToggle } />
       <div className={styles.container}>
         <div className={styles['header-container']}>
           <div></div>

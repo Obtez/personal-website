@@ -52,7 +52,7 @@ const projects = [
   }
 ]
 
-const ProjectsScreen = () => {
+const ProjectsScreen = ({switchMenuToggle}) => {
   const [project, setProject] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -60,9 +60,11 @@ const ProjectsScreen = () => {
     if (modalOpen) {
       setProject(null)
       setModalOpen(false)
+      switchMenuToggle(true)
     } else {
       setProject(project)
       setModalOpen(true)
+      switchMenuToggle(false)
     }
   }
 

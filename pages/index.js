@@ -1,3 +1,4 @@
+import {useState} from "react"
 import Head from 'next/head';
 import About from './components/About';
 import HeroScreen from './components/HeroScreen';
@@ -8,6 +9,12 @@ import styles from '../styles/Home.module.scss';
 import Contact from './components/Contact';
 
 export default function Home() {
+  const [showMenuToggle, setShowMenuToggle] = useState(true);
+
+  function switchMenuToggle() {
+    setShowMenuToggle(!showMenuToggle);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,9 +25,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <HeroScreen />
+        <HeroScreen showMenuToggle={showMenuToggle} />
           <TechScreen />
-        <ProjectsScreen />
+        <ProjectsScreen switchMenuToggle={switchMenuToggle} />
         <About />
         <WhyMe />
         <Contact />
