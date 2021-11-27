@@ -8,7 +8,7 @@ const ProjectCard = ({ project, toggleModal }) => {
   }
 
   return (
-    <div className={styles.projectCard}>
+    <div className={styles.projectCard} onClick={() => toggleModal(project)}>
 
       <Image src={project.image[0]} alt={project.title} width={256} height={171} />
 
@@ -20,7 +20,7 @@ const ProjectCard = ({ project, toggleModal }) => {
 
       <div className={styles.btnContainer}>
       <button type="button" onClick={() => toggleModal(project)}>Details</button>
-      <a href={project.githubURL} type="button" target="_blank" rel="noreferrer"><BsGithub className={styles.githubIcon} /> GitHub</a>
+      <a href={project.githubURL} onClick={(e) => {e.stopPropagation()}} type="button" target="_blank" rel="noreferrer"><BsGithub className={styles.githubIcon} /> GitHub</a>
       </div>
     </div>
   )
