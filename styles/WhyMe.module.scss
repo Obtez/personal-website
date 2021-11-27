@@ -48,6 +48,9 @@
 }
 
 .wave {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	margin-top: 8vh;
 	width: 100vw;
 }
@@ -137,7 +140,8 @@
 
 	.wave {
 		margin-top: 4.5rem;
-		width: 100%;
+		// width: 100%;
+		width: 100vw;
 	}
 }
 
@@ -177,7 +181,7 @@
 
 	.wave {
 		margin-top: 5rem;
-		width: 100%;
+		width: 100vw;
 	}
 }
 
@@ -226,5 +230,6 @@
 	.wave {
 		margin-bottom: .4rem;
 		margin-top: 6vh;
+		width: 100vw;
 	}
 }
