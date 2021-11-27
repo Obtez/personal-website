@@ -1,7 +1,8 @@
 import { BiLinkExternal } from 'react-icons/bi';
 
 import styles from '../../styles/Hero.module.scss';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
+import Navbar from "./navbar/Navbar"
 
 const HeroScreen = ({showMenuToggle}) => {
   return (
