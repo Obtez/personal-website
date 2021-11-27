@@ -164,8 +164,13 @@
 	}
 }
 
-.projectImageContainer {
+.imageArea {
 	grid-area: image;
+	border: 1px solid red;
+	width: 100%;
+}
+
+.projectImageContainer {
 	position: relative;
 	height: fit-content;
 	width: fit-content;
@@ -530,15 +535,10 @@
 	}
 
 	.projectImageCarousel {
-		width: 100%;
+		display: flex;
+		flex-grow: 1;
 
 		img {
-			width: 100%;
-			height: auto;
-			max-height: 74vh;
-			border-radius: 6px;
-			display: block;
-			margin-left: auto;
 		}
 	}
 }
