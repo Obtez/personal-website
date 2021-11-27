@@ -166,8 +166,9 @@
 
 .imageArea {
 	grid-area: image;
-	border: 1px solid red;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .projectImageContainer {
@@ -535,12 +536,6 @@
 	}
 
 	.projectImageCarousel {
-<<<<<<< HEAD
-		display: flex;
-		flex-grow: 1;
-
-=======
->>>>>>> refs/remotes/origin/main
 		img {
 		}
 	}
