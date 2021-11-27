@@ -6,7 +6,7 @@ const ProjectHeader = ({ project }) => {
   if (!project) return null
 
   return (
-    <header>
+    <header className={styles.projectHeader}>
       <h3 className={styles.projectTitle}>{project.title}</h3>
       <a href={project.demoURL} target="_blank" rel="noreferrer" className={`${styles.secondaryBtn} ${styles.demoBtn} ${styles.demoBtnMobile}`}><FaPlayCircle /> Demo</a>
     </header>
