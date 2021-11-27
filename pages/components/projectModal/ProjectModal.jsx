@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import { useState } from 'react';
 import { BsGithub } from 'react-icons/bs'
 import {IoCloseOutline} from 'react-icons/io5'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import {FaPlayCircle} from 'react-icons/fa'
-import styles from "../../styles/ProjectModal.module.scss"
+import styles from "../../../styles/ProjectModal.module.scss"
+import ProjectHeader from './ProjectHeader';
+
 
 const ProjectModal = ({ project, toggleModal }) => {
   const [activeImage, setActiveImage] = useState(0)
@@ -42,10 +44,11 @@ const ProjectModal = ({ project, toggleModal }) => {
       <div className={styles.projectModal} onClick={(e) => {e.stopPropagation()}}>
         <IoCloseOutline className={styles.closeBtn} onClick={() => toggleModal(null)}/>
         <div className={styles.descriptionContainer}>
-          <h3 className={styles.projectTitle}>{project.title}</h3>
-          <a href={project.demoURL} target="_blank" rel="noreferrer" className={`${styles.secondaryBtn} ${styles.demoBtn} ${styles.demoBtnMobile}`}><FaPlayCircle /> Demo</a>
-          <p className={styles.projectTech}>{project.tech}</p>
+          
+          <ProjectHeader project={project} />
+       
           <div className={styles.projectSummary}>{ formatProjectDescription() }</div>
+          
            <div className={styles.btnContainer}>
             <a href="#contact" className={styles.primaryBtn} onClick={() => toggleModal(null)}>Contact Me</a>
             <a href={project.githubURL} target="_blank" rel="noreferrer" className={styles.secondaryBtn}><BsGithub /> GitHub</a>

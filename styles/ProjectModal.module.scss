@@ -1,6 +1,10 @@
 @import "./variables";
 @import "./mixins";
 
+.demoBtnMobile {
+	display: none;
+}
+
 .modalContainer {
 	position: fixed;
 	top: 0;
@@ -410,10 +414,18 @@
 		justify-content: space-between;
 		flex-grow: 1;
 
+	
+
 		.projectTitle {
+			display: inline-block;
 			margin-top: 0.8rem;
 			font-size: 1.5rem;
 		}
+
+		.demoBtnMobile {
+			display: inline-block;
+		}
+
 		.projectTech {
 			margin-top: 0.8rem;
 			font-size: 1rem;
@@ -434,6 +446,11 @@
 		.secondaryBtn {
 			margin-left: 1.5rem;
 		}
+
+		.demoBtnDesktop {
+			display: none;
+		}
+
 	}
 }
 
@@ -473,9 +490,16 @@
 		flex-grow: 1;
 
 		.projectTitle {
+			display: inline;
 			margin-top: 0.8rem;
 			font-size: 1.5rem;
 		}
+
+		.demoBtnMobile {
+			display: inline;
+		}
+
+		
 		.projectTech {
 			margin-top: 0.8rem;
 			font-size: 1rem;
@@ -496,6 +520,11 @@
 		.secondaryBtn {
 			margin-left: 1.5rem;
 		}
+
+		.demoBtnDesktop {
+			display: none;
+		}
+
 	}
 }
 
@@ -545,6 +574,7 @@
 			margin-top: 0.8rem;
 			font-size: 1.5rem;
 		}
+
 		.projectTech {
 			margin-top: 0.8rem;
 			font-size: 1rem;
@@ -593,6 +623,7 @@
 
 //for phones HORIZONTAL
 @media screen and (max-width: 812px) and (max-height: 567px) {
+	
 	.projectModal {
 		top: 2vh;
 		bottom: 2vh;

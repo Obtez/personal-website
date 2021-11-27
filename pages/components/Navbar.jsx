@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { HiMenu } from 'react-icons/hi';
 import styles from '../../styles/Hero.module.scss';
 
-const Navbar = () => {
+const Navbar = ({showMenuToggle}) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +12,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.mobileMenu}>
-        <HiMenu onClick={toggleMenu} className={styles.toggle__icon} />
+        {
+          showMenuToggle && <HiMenu onClick={toggleMenu} className={styles.toggle__icon} />
+        }
         {
           showMobileMenu && (
             <div className={styles.mobile__menu__container} onClick={toggleMenu}>

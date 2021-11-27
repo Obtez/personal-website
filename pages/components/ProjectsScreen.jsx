@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import {useState} from 'react'
 const ProjectCard = dynamic(() => import('./ProjectCard'))
-const ProjectModal = dynamic(() => import('./ProjectModal'))
+const ProjectModal = dynamic(() => import('./projectModal/ProjectModal'))
 import styles from "../../styles/Projects.module.scss"
 
 const projects = [
@@ -52,7 +52,7 @@ const projects = [
   }
 ]
 
-const ProjectsScreen = () => {
+const ProjectsScreen = ({switchMenuToggle}) => {
   const [project, setProject] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -60,9 +60,11 @@ const ProjectsScreen = () => {
     if (modalOpen) {
       setProject(null)
       setModalOpen(false)
+      switchMenuToggle(true)
     } else {
       setProject(project)
       setModalOpen(true)
+      switchMenuToggle(false)
     }
   }
 
