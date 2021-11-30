@@ -12,7 +12,9 @@ import Contact from './components/Contact';
 export default function Home() {
   const [showMenuToggle, setShowMenuToggle] = useState(true);
 
-  smoothScroll.polyfill();
+  if (typeof window !== "undefined") {
+    smoothScroll.polyfill();
+  }
 
   function switchMenuToggle() {
     setShowMenuToggle(!showMenuToggle);

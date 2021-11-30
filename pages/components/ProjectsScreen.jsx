@@ -66,6 +66,10 @@ const ProjectsScreen = ({switchMenuToggle}) => {
       setModalOpen(true)
       switchMenuToggle(false)
     }
+
+    if (typeof window !== 'undefined') {
+      console.log(window.location);
+    }
   }
 
   return (
