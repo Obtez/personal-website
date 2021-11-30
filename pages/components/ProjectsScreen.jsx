@@ -8,7 +8,7 @@ const projects = [
   {
     image: ["/assets/project-images/hedgeycards.png"],
     tech: "HTML, CSS, React",
-    title: "Project Title",
+    title: "Project Title1",
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     githubURL: "https://www.github.com",
@@ -17,7 +17,7 @@ const projects = [
   {
     image: ["/assets/project-images/hedgeycards.png"],
     tech: "HTML, CSS, React",
-    title: "Project Title",
+    title: "Project Title2",
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     githubURL: "https://www.github.com",
@@ -35,7 +35,7 @@ const projects = [
   {
     image: ["/assets/project-images/hedgeycards.png"],
     tech: "HTML, CSS, React",
-    title: "Project Title",
+    title: "Project Title3",
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     githubURL: "https://www.github.com",
@@ -44,7 +44,7 @@ const projects = [
   {
     image: ["/assets/project-images/hedgeycards.png"],
     tech: "HTML, CSS, React",
-    title: "Project Title",
+    title: "Project Title4",
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
     githubURL: "https://www.github.com",
@@ -65,10 +65,6 @@ const ProjectsScreen = ({switchMenuToggle}) => {
       setProject(project)
       setModalOpen(true)
       switchMenuToggle(false)
-    }
-
-    if (typeof window !== 'undefined') {
-      console.log(window.location);
     }
   }
 

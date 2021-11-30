@@ -79,7 +79,7 @@ const ProjectModal = ({ project, toggleModal }) => {
           <div className={styles.projectImageContainer}>
             {
               project.image.length > 1 && (
-               <div className={styles.controlsOverlay}>
+               <div className={styles.controlsOverlay} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                 <div className={styles.arrowLeftContainer} onClick={handlePreviousImage}>
                   <BsChevronLeft className={styles.arrowLeft} />
                 </div>
