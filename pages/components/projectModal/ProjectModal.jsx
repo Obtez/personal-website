@@ -27,9 +27,9 @@ const ProjectModal = ({ project, toggleModal }) => {
     const touchDifference = touchEndPosition - touchPosition
 
     if (touchDifference > 100) {
-      setActiveImage(activeImage - 1)
+      handlePreviousImage()
     } else if (touchDifference < -100) {
-      setActiveImage(activeImage + 1)
+      handleNextImage()
     }
   }
 
