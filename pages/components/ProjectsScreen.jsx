@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 const ProjectCard = dynamic(() => import('./ProjectCard'))
 const ProjectModal = dynamic(() => import('./projectModal/ProjectModal'))
 import styles from "../../styles/Projects.module.scss"
@@ -55,16 +55,40 @@ const projects = [
 const ProjectsScreen = ({switchMenuToggle}) => {
   const [project, setProject] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
+  const [lastPosition, setLastPosition] = useState(0)
+
+  // disable scrolling when modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.position = "relative"
+      document.body.style.overflow = "hidden"
+      document.body.height = "100vh"
+    } else {
+      document.body.style.position = "unset"
+      document.body.style.overflow = "unset"
+      document.body.height = "unset"
+    }
+  }, [modalOpen])
+  
 
   function toggleModal(project) {
     if (modalOpen) {
       setProject(null)
       setModalOpen(false)
       switchMenuToggle(true)
+
+      if(typeof window !== "undefined") {
+        window.scrollTo(0, lastPosition)
+      }
+      
     } else {
       setProject(project)
       setModalOpen(true)
       switchMenuToggle(false)
+
+      if (typeof window !== "undefined") {
+        setLastPosition(window.scrollY)
+      }
     }
   }
 
