@@ -70,7 +70,6 @@ const ProjectsScreen = ({switchMenuToggle}) => {
     }
   }, [modalOpen])
   
-
   function toggleModal(project) {
     if (modalOpen) {
       setProject(null)
