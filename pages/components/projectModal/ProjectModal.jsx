@@ -9,7 +9,8 @@ import ProjectHeader from './ProjectHeader';
 const ProjectModal = ({ project, toggleModal }) => {
   const [activeImage, setActiveImage] = useState(0)
   const [touchPosition, setTouchPosition] = useState(null)
-
+  const [showAnimation, setShowAnimation] = useState(false)
+   
   if (!project) {
     return null;
   }
@@ -28,25 +29,40 @@ const ProjectModal = ({ project, toggleModal }) => {
 
     if (touchDifference > 20) {
       handlePreviousImage()
-    } else if (touchDifference < -20) {
+    }
+    if (touchDifference < -20) {
       handleNextImage()
     }
+  
   }
 
   function handleNextImage() {
+
+    setShowAnimation("right")
+
     if (activeImage < project.image.length - 1) {
       setActiveImage(activeImage + 1)
     } else {
       setActiveImage(0)
     }
+
+    setTimeout(() => {
+      setShowAnimation(false)
+    }, 500)
   }
 
   function handlePreviousImage() {
+    setShowAnimation("left")
+
     if (activeImage > 0) {
       setActiveImage(activeImage - 1)
     } else {
       setActiveImage(project.image.length - 1)
     }
+
+    setTimeout(() => {
+      setShowAnimation(false)
+    }, 1000)
   }
 
   function formatProjectDescription () {
@@ -55,6 +71,16 @@ const ProjectModal = ({ project, toggleModal }) => {
       return splitDescription.map(line => <p key={line}>{line}</p>)
     } else {
       return project.description
+    }
+  }
+
+  function animationDirection() {
+    if (showAnimation === "right") {
+      return styles["slide-in-right"]
+    } else if (showAnimation === "left") {
+      return styles["slide-in-left"]
+    } else {
+      return ""
     }
   }
 
@@ -76,7 +102,7 @@ const ProjectModal = ({ project, toggleModal }) => {
           </div>
         </div>
         <div className={styles.imageArea}>
-          <div className={styles.projectImageContainer}>
+          <div className={`${styles.projectImageContainer} ${animationDirection()}`}>
             {
               project.image.length > 1 && (
                <div className={styles.controlsOverlay} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
