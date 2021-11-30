@@ -1,3 +1,4 @@
+import smoothScroll from 'smoothscroll-polyfill';
 import {useState} from "react"
 import Head from 'next/head';
 import About from './components/About';
@@ -10,6 +11,8 @@ import Contact from './components/Contact';
 
 export default function Home() {
   const [showMenuToggle, setShowMenuToggle] = useState(true);
+
+  smoothScroll.polyfill();
 
   function switchMenuToggle() {
     setShowMenuToggle(!showMenuToggle);
