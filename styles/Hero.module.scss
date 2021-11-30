@@ -132,6 +132,12 @@
 				color: $accent;
 				border: 3px solid $accent;
 			}
+
+			&:focus {
+				background-color: $accent;
+				color: $off-white;
+				border: 3px solid transparent;
+			}
 		}
 		&__secondaryBtn {
 			margin-left: 2.5rem;
