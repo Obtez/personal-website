@@ -109,9 +109,10 @@
 		flex-grow: 1;
 		overflow-y: auto;
 		margin-right: 1.5rem;
+		margin-top: 1rem;
 
 		p {
-			margin-top: 1rem;
+			margin-bottom: 1rem;
 		}
 	}
 }
@@ -225,6 +226,22 @@
 			display: block;
 			margin-left: auto;
 		}
+	}
+}
+
+.slide-in-anim {
+	animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
@@ -591,17 +608,18 @@
 		justify-content: space-between;
 		flex-grow: 1;
 		overflow-y: auto;
+		overflow-x: hidden;
 
 		.projectTitle {
 			font-size: 1.5rem;
 		}
 
 		.projectTech {
-			margin-top: 0.8rem;
+			margin-top: 0.5rem;
 			font-size: 1rem;
 		}
 		.projectSummary {
-			margin-top: 0.7rem;
+			margin-top: 0.5rem;
 			line-height: 150%;
 			font-size: 1rem;
 		}
