@@ -2,7 +2,6 @@ import { BiLinkExternal } from 'react-icons/bi';
 import { smoothScroll } from '../../helpers/_navHelpers';
 
 import styles from '../../styles/Hero.module.scss';
-// import Navbar from './Navbar';
 import Navbar from "./navbar/Navbar"
 
 const HeroScreen = ({showMenuToggle}) => {
@@ -20,10 +19,14 @@ const HeroScreen = ({showMenuToggle}) => {
               Full Stack <br /> Web Developer
             </h1>
             <div className={styles['header__btn-container']}>
-              <a href="#projects" className={styles['header__btn-container__primaryBtn']}>
+              <a href="#projects"
+                className={styles['header__btn-container__primaryBtn']}
+              onClick={(e) => smoothScroll(e)}>
                 My Projects
               </a>
-              <a href="#contact" className={styles['header__btn-container__secondaryBtn']}>
+              <a href="#contact"
+                className={styles['header__btn-container__secondaryBtn']}
+              onClick={(e) => smoothScroll(e)}>
                 <BiLinkExternal
                   className={styles['header__btn-container__btnIcon']}
                 />
