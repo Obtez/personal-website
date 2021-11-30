@@ -26,10 +26,10 @@ const ProjectModal = ({ project, toggleModal }) => {
     const touchEndPosition = e.changedTouches[0].clientX
     const touchDifference = touchEndPosition - touchPosition
 
-    if (touchDifference > 100) {
-      setActiveImage(activeImage - 1)
-    } else if (touchDifference < -100) {
-      setActiveImage(activeImage + 1)
+    if (touchDifference > 20) {
+      handlePreviousImage()
+    } else if (touchDifference < -20) {
+      handleNextImage()
     }
   }
 
