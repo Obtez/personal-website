@@ -18,15 +18,15 @@ const WhyMe = () => {
         
         <div className={styles.card}>
           <h3><IoDiamondOutline /> Quality</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet</p>
+          <p>I strive to only deliver the best. Many thoughts not only go into the code itself, but also the projects performance and maintainability.</p>
         </div>
          <div className={styles.card}>
           <h3><BiCodeCurly /> Full Stack</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet</p>
+          <p>Be it Frontend or Backend - I can handle it. Need a nice looking landing page for your business? Sure. Want to connect your website to a database? Let&apos;s do it.</p>
         </div>
          <div className={styles.card}>
-          <h3><AiOutlineFieldTime /> Reliablility</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet</p>
+          <h3><AiOutlineFieldTime /> Up-to-date</h3>
+          <p>The industry is ever-changing. Thus, it is important to me to always stay up to date with the newest versions of my technology stack.</p>
         </div>
       </div>
 

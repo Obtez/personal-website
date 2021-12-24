@@ -6,24 +6,6 @@ import styles from "../../styles/Projects.module.scss"
 
 const projects = [
   {
-    image: ["/assets/project-images/hedgeycards.png"],
-    tech: "HTML, CSS, React",
-    title: "Project Title1",
-    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    githubURL: "https://www.github.com",
-    demoURL: "https://www.github.com"
-  },
-  {
-    image: ["/assets/project-images/hedgeycards.png"],
-    tech: "HTML, CSS, React",
-    title: "Project Title2",
-    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    githubURL: "https://www.github.com",
-    demoURL: "https://www.github.com"
-  },
-  {
     image: ["/assets/project-images/hedgeycards.png", "/assets/project-images/hedgeycards2.png", "/assets/project-images/hedgeycards3.png"],
     tech: "React, Typescript, SCSS",
     title: "Flash Card Builder",
@@ -32,24 +14,6 @@ const projects = [
     githubURL: "https://github.com/Obtez/flash-card-generator",
     demoURL: "https://happy-hoover-178c46.netlify.app/"
   },
-  {
-    image: ["/assets/project-images/hedgeycards.png"],
-    tech: "HTML, CSS, React",
-    title: "Project Title3",
-    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    githubURL: "https://www.github.com",
-    demoURL: "https://www.github.com"
-  },
-  {
-    image: ["/assets/project-images/hedgeycards.png"],
-    tech: "HTML, CSS, React",
-    title: "Project Title4",
-    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus mi, sagittis ut commodo",
-    githubURL: "https://www.github.com",
-    demoURL: "https://www.github.com"
-  }
 ]
 
 const ProjectsScreen = ({switchMenuToggle}) => {
