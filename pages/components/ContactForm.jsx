@@ -1,13 +1,12 @@
 import {useState} from "react"
 import styles from "../../styles/Contact.module.scss"
 
-const ContactForm = () => {
+const ContactForm = ({toggleShowSuccess}) => {
   const [messageData, setMessageData] = useState({
     name: "",
     email: "",
     message: ""
   })
-  const [successMessage, setSuccessMessage] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +36,7 @@ const ContactForm = () => {
       return;
     }
 
-    setSuccessMessage(true)
+    toggleShowSuccess()
 
     setMessageData({
       name: "",

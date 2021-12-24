@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { AiFillLinkedin, AiFillGithub, AiFillTwitterCircle } from "react-icons/ai"
 import styles from "../../styles/Contact.module.scss"
 import ContactForm from "./ContactForm"
 import Footer from "./Footer"
+import FormSuccess from "./FormSuccess";
 
 const Contact = () => {
+  const [showSuccess, setShowSuccess] = useState(false)
+
+  const toggleShowSuccess = () => {
+    setShowSuccess(!showSuccess)
+  }
+
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
@@ -26,7 +34,9 @@ const Contact = () => {
         </div>
 
         <div className={styles.formContainer}>
-          <ContactForm />
+          {
+            showSuccess ? <FormSuccess /> : <ContactForm toggleShowSuccess={toggleShowSuccess} /> 
+          }
         </div>
 
         <div className={styles.footerContainer}>
